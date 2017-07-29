@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The If Expression - Hive Documentation</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="css/styles/vs.css">
+    <link rel="stylesheet" href="css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="index.htm"><i class="fa fa-home"></i> Hive Documentation</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry current"><a class="current" href="if.htm">The If Expression</a>
+</li>
+<li class="tocentry"><a href="number.htm">Working with Numbers</a>
+</li>
+<li class="tocentry"><a href="text.htm">Working with Text</a>
+</li>
+<li class="tocentry"><a href="table.htm">The RecordComponent</a>
+</li>
+<li class="tocentry"><a href="libraries/math.htm">The Math Library</a>
+</li>
+<li class="tocentry"><a href="control-dom-css.htm">Control DOM & CSS classes</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="index.htm">Hive Documentation</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="index.htm">Getting Started</a></li> / <li><a href="if.htm">The If Expression</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="the--expression">The <code>if</code> Expression</h1>
+<p>The <code>if</code> expression allows you to perform different actions based on one or more conditions. Let's look at some examples to see how it works.</p>
+<p>In the first example, we calculate the price for a product. If the customer buys at least 5 units of our imaginary product, we grant him a discount:</p>
+<pre class="nocode">if Amount &gt;= 5 then
+  Price * 0.9  // 10% discount because Amount is greater than or equal to 5
+else
+  Price        // regular price for when the Amount is less than 5
+end
+</pre><p>Let's break this down: </p>
+<ul>
+<li>Every <code>if</code> expression begins with the keyword <code>if</code> and an arbitrary <code>Logic</code> expression: the <em>condition</em>. In this case the condition is <code>Amount &gt;= 5</code>.</li>
+<li>If the <em>condition</em> is <code>true</code>, the expression that follows the <code>then</code> keyword will be executed. </li>
+<li>If the <em>condition</em> is <code>false</code>, the expression that follows the <code>else</code> keyword will be executed instead.</li>
+<li>Every <code>if</code> expression ends with the keyword <code>end</code>. This is to distinguish the <code>else</code> expression from any subsequent ones. We will see why this is necessary in the next example.</li>
+</ul>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>Note that <strong>all</strong> <code>if</code> expressions <strong>must have an <code>else</code> expression</strong>.<br />
+Many other programming languages do not have this requirement, so if you're a programmer than this might feel a bit unusual.</p>
+</div><p>You can also define more than one condition in an <code>if</code> expression. Let's look at a more complex example. Imagine we wanted to give customers an additional discount if they buy more than 9 units, and let's also add some shipping costs to the price:</p>
+<pre class="nocode">if Amount &gt; 9 then
+  Price * 0.8   // 20% discount because Amount is greater than 9
+elif Amount &gt;= 5 then
+  Price * 0.9   // 10% discount for 5 to 9 units
+else
+  Price         // regular price for less than 5 units
+end
++ ShippingCosts // add shipping costs to the price we just calculated
+</pre><p>Let's break it down again:</p>
+<ul>
+<li>We first check if the <code>Amount</code> is greater than <code>9</code>. We must check for this first because only one condition in an <code>if</code> can be <code>true</code>, and conditions are looked at one after another. If the greater-than-5 condition would come first, any number greater than 9 would also satisfy it and we'd never reach the next condition!</li>
+<li>Subsequent conditions start with the <code>elif</code> keyword (that's a combination of <code>else</code> and <code>if</code>). Aside from the queer name, it's basically the same as the initial <code>if</code>. </li>
+<li>You can use as many <code>elif</code> expressions as you like, but there can only be one <code>if</code> and one <code>else</code> expression. </li>
+<li>
+Every <code>if</code> expression results in a value that can be processed further. In this case, we add the <code>ShippingCosts</code> to whatever price was calculated by the <code>if</code>. 
+<ul>
+<li>This is also the reason why every <code>if</code> must have an <code>else</code> expression: without it, the <code>if</code> would not return a value if none of its condition were met.</li>
+</ul>
+</li>
+</ul>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/modernizr-2.8.3.min.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script src="js/theme.js"></script>
+{{ExtraScript}}
+</body>
+</html>

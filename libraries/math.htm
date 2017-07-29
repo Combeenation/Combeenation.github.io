@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Math Library - Hive Documentation</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/vs.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Hive Documentation</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry"><a href="../if.htm">The If Expression</a>
+</li>
+<li class="tocentry"><a href="../number.htm">Working with Numbers</a>
+</li>
+<li class="tocentry"><a href="../text.htm">Working with Text</a>
+</li>
+<li class="tocentry"><a href="../table.htm">The RecordComponent</a>
+</li>
+<li class="tocentry current"><a class="current" href="../libraries/math.htm">The Math Library</a>
+<ul class="currentrelativeroot">
+<li class="tocentry"><a href="#usage">Usage</a></li>
+<li class="tocentry"><a href="#constants">Constants</a></li>
+<li class="tocentry"><a href="#functions">Functions</a></li>
+</ul>
+<li class="tocentry"><a href="../control-dom-css.htm">Control DOM & CSS classes</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Hive Documentation</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../libraries%2fmath.htm">The Math Library</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="the-math-library">The Math Library</h1>
+<p>The <code>Math</code> library provides trigonometric and other advanced mathematical functions and constants.<br />
+For commonly used, simple mathematical functions take a look at the <a href="../number.htm"><code>Number</code></a> type.</p>
+<h2 id="usage">Usage</h2>
+<p>To use any of the functions described on this page, you must prefix them with the <code>Math</code> library name:</p>
+<pre class="nocode">Math.sin(Math.pi / 2)    // results in 1
+</pre><p>If you cannot use the library because you already named something else &quot;Math&quot;, you can explicitly refer to it by prefixing it with <code>Combeenation</code> (or <code>Cbn</code> for short):</p>
+<pre class="nocode">Combeenation.Math.sin(Cbn.Math.pi / 2)    // also results in 1
+</pre><h2 id="constants">Constants</h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>pi</td>
+	<td>The number <a href="https://en.wikipedia.org/wiki/Pi" target="_blank">π</a></td>
+</tr>
+<tr>
+	<td>e</td>
+	<td>The number <a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)" target="_blank">e</a> (natural logarithmic base)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions">Functions</h2>
+<p>The <code>Math</code> library offers the following functions:</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="#abs">abs</a></td>
+	<td>Returns the <strong>absolute value</strong> of a number</td>
+</tr>
+<tr>
+	<td><a href="#sqrt">sqrt</a></td>
+	<td>Returns the <strong>square root</strong> of a number</td>
+</tr>
+<tr>
+	<td><a href="#random">random</a></td>
+	<td>Returns a random number</td>
+</tr>
+<tr>
+	<td><a href="#max">max</a></td>
+	<td>Returns the greater of two numbers</td>
+</tr>
+<tr>
+	<td><a href="#min">min</a></td>
+	<td>Returns the lesser of two numbers</td>
+</tr>
+<tr>
+	<td><a href="#sin">sin</a>, <a href="#sin">sinr</a></td>
+	<td>Returns the <strong>sine</strong> of the specified angle</td>
+</tr>
+<tr>
+	<td><a href="#cos">cos</a>, <a href="#cos">cosr</a></td>
+	<td>Returns the <strong>cosine</strong> of the specified angle</td>
+</tr>
+<tr>
+	<td><a href="#tan">tan</a>, <a href="#tan">tanr</a></td>
+	<td>Returns the <strong>tangent</strong> of the specified angle</td>
+</tr>
+<tr>
+	<td><a href="#asin">asin</a>, <a href="#asin">asinr</a></td>
+	<td>Returns the angle whose sine is the specified number</td>
+</tr>
+<tr>
+	<td><a href="#acos">acos</a>, <a href="#acos">acosr</a></td>
+	<td>Returns the angle whose cosine is the specified number</td>
+</tr>
+<tr>
+	<td><a href="#atan">atan</a>, <a href="#atan">atanr</a></td>
+	<td>Returns the angle whose tangent is the specified number</td>
+</tr>
+</tbody>
+</table>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+{{ExtraScript}}
+</body>
+</html>
