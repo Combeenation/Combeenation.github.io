@@ -1,32 +1,32 @@
 {
   "docs": [
     {
-      "location": "if.htm",
-      "breadcrumbs": "Getting Started / The If Expression",
+      "location": "hive/if.htm",
+      "breadcrumbs": "Getting Started / Hive / The If Expression",
       "keywords": "_condition_ 0 10 20 5 8 9 a actions add additional after again alert all allows also Amount an and another any arbitrary are as Aside at based basically be because begins bit break but buy buys by calculate calculated can case check combination come complex condition conditions costs customer customers define different discount distinguish do down elif else end ends equal every Every example examples executed expression Expression expressions false feel first follows for from further give grant greater have him how if If imaginary Imagine in In initial instead is it its just keyword languages least less let Let like Logic look looked many Many met might more must name necessary never next none not Note number of on one ones only or other our perform price Price processed product programmer programming queer reach reason regular requirement results return same satisfy see shipping ShippingCosts so some start subsequent Subsequent than that the The then there they this This to true units unusual use value wanted warning was we We were whatever when why will with without works would you You",
       "title": "The If Expression"
     },
     {
-      "location": "number.htm",
-      "breadcrumbs": "Getting Started / Working with Numbers",
+      "location": "hive/number.htm",
+      "breadcrumbs": "Getting Started / Hive / Working with Numbers",
       "keywords": "_ 0 00 000 0000 0123 05 0c899ak8 1 10 100 11 12 123 1234 12345678 13 1337 19 2 24 25 3 337 345 35 37 4 445 45 456 5 678 7 9 99 a A about above Add addition additional Adds after alert alike All also always Amount an and another Any appears are arithmetic as aspx assume at atLeast AtLeast atMost AtMost available away backslash be becomes been between but by Calculates can ceiling Ceiling certain characters check code com combination combined Compares comparing Comparing component components contains conversion Converts copied corresponding customize decimal Defines degrees depth Description Determines digit digits displayed Divide Divides documentation double e each easy empty en enclose end ensure equal Equal even example Example examples explanation Exponentiation false find first floor Floor following for For format Format formatted fractional from function functionality functions Functions g great greater Greater group hash have here Hive htm https i if If ignored in In info information inputs inserts Inserts integer integral inverse is it its keep largest less Less libraries library literal literally localized location look make math Math mathematical may mentioned microsoft mind mod Modulo more msdn MSDN Multiplies Multiply myPrice Name nearest Negate negative never no not Not number Number numbers Numbers of offers on one only operations Operations operators or order Other otherwise out output parameter part percentage periods placeholder Please positive power precede present price quickly quotes Raises range remainder Replaces result Result results return returns Returns round Round rounded rounding Rounding rounds Rounds same samples second section sections separate separator settings should shown sign significant simply single six smallest specified specify strings Subtract Subtracts symbol take text Text than that the The them there these they this threshold Tip to total toText ToText toTextFormat towards true truncate Truncate two type underlying us use used user v validating value variables vs were When will with within work Working would you You zero",
       "title": "Working with Numbers"
     },
     {
-      "location": "text.htm",
-      "breadcrumbs": "Getting Started / Working with Text",
+      "location": "hive/text.htm",
+      "breadcrumbs": "Getting Started / Hive / Working with Text",
       "keywords": "_ _Coming 0 1 100 123 13 3 37 4 5 6 7 a about accomplish Add alert alike all All Always an and are as awe awesome Awesome AWESOME be because beginning both breaks but But can cannot case characters choice Color Combines combining comparing Comparing component components considered contains conversion converted Converts copy could currently decodeHtml DecodeHtml Decodes decodeUrl DecodeUrl Description do e easier easy either empty Empty encoded encodeHtml EncodeHtml encodeUrl EncodeUrl end equal Equal exact example Example expression extract fails fallback false find first following for For forward from function functions Functions g goal greater here high htm HTML if If illegal Imagine in In info information insensitive inventory inventoryNumber is it just length Length like line literal literals lower made means most myText Name negative not Not Note number Number of offers often omitted on one operations Operations operator operators opposite or present probably problem provide reason Repeat Repeats result Result returned Returns same second section shown significant skip Skip skipped so some soon space spaces specified ST straight subset such SVG tabs take Take taken text Text texts than that the The there There this This times to toColor ToColor toLower ToLower toNumber ToNumber toSvg ToSvg toUpper ToUpper towards true two type up UP upper URL use used value values variables wanted warning way We well when which Whitespace will with work Working write XYZ you You yours zero",
       "title": "Working with Text"
     },
     {
-      "location": "table.htm",
-      "breadcrumbs": "Getting Started / The RecordComponent",
+      "location": "hive/table.htm",
+      "breadcrumbs": "Getting Started / Hive / The RecordComponent",
       "keywords": "1 10 2 20 3 30 9 a alert Apples are assume Bananas below by called Description Empty end Example examples fallback first found fruits function Functions get Get getFirst GetFirst has Hive how if If in info is it key Key like looks Name no none Number of one or Oranges out own Price provide record RecordComponent records Records Result Returns scripts specified table Text that the The there this Tip to try use want was with you your",
       "title": "The RecordComponent"
     },
     {
-      "location": "libraries/math.htm",
-      "breadcrumbs": "Getting Started / The Math Library",
+      "location": "hive/math.htm",
+      "breadcrumbs": "Getting Started / Hive / The Math Library",
       "keywords": "1 2 a abs absolute acos acosr advanced already also and angle any asin asinr at atan atanr base because by can cannot Cbn Combeenation commonly constants Constants cos cosine cosr described Description e E_ else en explicitly following for For functions Functions greater htm https If in is it lesser library Library logarithmic look Math mathematical mathematical_constant max min must name Name named natural number Number numbers of offers on or org other page pi Pi prefix prefixing provides random refer results Returns root short simple sin sine sinr something specified sqrt square take tan tangent tanr the The them this to To trigonometric two type Usage use used value whose wiki wikipedia with you π",
       "title": "The Math Library"
     },
