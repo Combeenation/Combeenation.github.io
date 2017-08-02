@@ -2,9 +2,9 @@
   "docs": [
     {
       "location": "version/1.15.htm",
-      "breadcrumbs": "Getting Started / Release Notes / Version 1.15",
-      "keywords": "03 1 15 2017 a accusam aliquyam amet At Aug clita consetetur diam dolor dolore dolores Drafts duo ea eirmod elitr eos erat est et for gubergren Introducing invidunt ipsum is just justo kasd labore Lorem magna no nonumy now on placeholder rebum Released sadipscing sanctus sea sed sit Stet takimata tempor This ut vero Version voluptua",
-      "title": "Version 1.15"
+      "breadcrumbs": "Getting Started / Release Notes / Version 1.15 Highlights",
+      "keywords": "1 15 a accusam aliquyam all amet At changes clita consetetur diam dolor dolore dolores Drafts duo ea eirmod elitr eos erat est et for gubergren Highlights htm Introducing invidunt ipsum is just justo kasd labore List Lorem magna no nonumy now of placeholder rebum releases sadipscing sanctus sea sed sit Stet takimata tempor This ut vero version Version voluptua",
+      "title": "Version 1.15 Highlights"
     },
     {
       "location": "hive/if.htm",
@@ -38,7 +38,7 @@
     },
     {
       "location": "control-dom-css.htm",
-      "breadcrumbs": "Getting Started / Control DOM & CSS classes",
+      "breadcrumbs": "Getting Started / Configurator editor / Control DOM & CSS classes",
       "keywords": "16px 3d a after alert all an and base bckgr before belong body br btn button Button Buttons caption certain cfgr cfgrctrl checkbox Checkbox checked Checkout checkoutbtn Child class classes classses collapse collapsed collapsible color1 color2 color3 color4 Colored combobox Combobox comboboxs Common conditions container content Control controls CSS ct ctrl ctrlscheme custom dataview Dataview depending differs disabled div DOM down drop el element elements end exist expanded External externalcontent fa field for form graphicview Graphicview h1 handle header headerlabel hidden hover icon iframe image img implement in indicates info inner innerlabel input is item label Label layer Layer Layout legend Legend li list little margin may most multiline navigator no noUi of on only optional Optional or origin page panel Panel plain property pseudo radiobutton Radiobutton repeat repeating selected selectors ShapeDiver shapediver3d Share sharebtn since slider Slider span start structure style svg text textarea textbox Textbox textboxes the The themes they to top trigger ul under upload using value vary view which withheader wizard Wizard wizardbtn wizardnavigator wizardpage wrap wrapper x",
       "title": "Control DOM & CSS classes"
     }

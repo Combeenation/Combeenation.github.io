@@ -986,6 +986,7 @@ td {
 	padding: 1.618em 3.236em;
 	height: 100%;
 	max-width: 800px;
+	min-height: 100vh;
 	margin: auto;
 }
 
@@ -995,6 +996,12 @@ td {
 	padding: 0.809em;
 	display: block;
 	margin-bottom: 0.809em;
+	background: url(res/combee-logo-white.png) no-repeat 24px 12px;
+	background-size: 32px;
+}
+
+.side-nav-search .fa-home {
+	display: none;
 }
 
 	.side-nav-search input[type=text] {
