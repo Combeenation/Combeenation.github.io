@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Version 1.16 - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/vs.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../releases.htm">Release Notes</a></span></li>
+
+<li class="tocentry current"><a class="current" href="../version/1.16.htm">Version 1.16</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#introducing-drafts">Introducing drafts</a></li>
+<li class="tocentry"><a href="#backend-ui-udpate">Backend UI udpate</a></li>
+<li class="tocentry"><a href="#configurator-deletion">Configurator deletion</a></li>
+</ul>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configuratoreditor.htm">Configurator editor</a></span>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../releases.htm">Release Notes</a></li> / <li><a href="../version%2f1.16.htm">Version 1.16</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="version-1.16-highlights">Version 1.16 Highlights</h1>
+<p><a href="../releases.htm#version-1.15">List of all changes</a></p>
+<h2 id="introducing-drafts">Introducing drafts</h2>
+<h3 id="history">History</h3>
+<p>Prior to this release each configurator had a development version and several published versions. The latest published version was used for the production configurator.</p>
+<div class="figure">
+<img src="..\img\BeforeSymbolic.PNG" title="The continually existing dev version (v0) will be published to a new version (v23)" width="608" height="285" />
+<p>The continually existing dev version (v0) will be published to a new version (v23)</p>
+</div>
+<p>The problem with this solution was that the the product manager had only one development configurator in which (s)he could implement new features, fix bugs, test new checkout solutions, ... . </p>
+<p>It was impossible to work on several issues in parallel and deploy them separately. For example if someone currently worked on a new layout and an urgent bug occurred, the layout work had to be discarded or finished completely before the configurator was safe for publishing.</p>
+<h3 id="drafts">Drafts</h3>
+<p>This brought us to the idea that we now offer up to five <em>drafts</em> per configrator.
+A draft is an entry point for developing new features for a configurator. Multiple product managers can now work in parallel on one configurator (e.g. one fixes an urgent checkout bug, where the other introduces a new feature). </p>
+<div class="figure">
+<img src="..\img\AfterSymbolic.PNG" title="One of the two drafts can be published to a new version. New drafts can be created based on the currently published version." width="607" height="371" />
+<p>One of the two drafts can be published to a new version. New drafts can be created based on the currently published version.</p>
+</div>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The changes won't be merged into each other, each drafts stands for its own and (if published) will replace the currently active configurator. Therefore changes made in one draft need to be applied manually in other drafts.</p>
+</div><p>Each draft has a preview url which can be used to test integration in the parent page or checkouts.
+A product manager can work on a draft as long as (s)he pleases, but the lifetime of a drafts ends as soon as the configurator will be published. The publishing always marks the end of a (long running) feature/bug fix/..., therefore we are deleting the draft afterwards.</p>
+<p>New drafts can be created if the configurator has been published at least once, because the source of a new draft is always the currently published version of the configurator.</p>
+<h2 id="backend-ui-udpate">Backend UI udpate</h2>
+<p>The new draft feature also comes with a backend UI update. Below you can see the old and the new configurator overview in comparison.</p>
+<div class="figure">
+<img src="..\img\BeforeUiSmall.PNG" title="Old configurator overview" width="697" height="461" />
+<p>Old configurator overview</p>
+</div>
+<div class="figure">
+<img src="..\img\AfterUiSmall.PNG" title="Updated configurator overview" width="697" height="520" />
+<p>Updated configurator overview</p>
+</div>
+<p>As you can see we still have our list of configurators on the left side. In the center we now grouped up the actions, starting with the configurator based operations on the top (e.g. withdraw, the history of all versions, information about the last publishing).</p>
+<p>The next section is the essential part of this update and displays all the drafts for the given configurator. Each draft has several actions:</p>
+<ul>
+<li><i class="fa fa-pencil"></i> <strong>Edit draft</strong> ... opens the draft in the configurator editor  </li>
+<li><i class="fa fa-folder"></i> <strong>View draft in editor</strong> ... opens the draft <strong>readonly</strong> in the configurator editor, useful if you just need to look up something without causing any changes  </li>
+<li><i class="fa fa-eye"></i> <strong>Preview draft</strong> ... opens the draft configurator, used for testing and integration  </li>
+<li><i class="fa fa-trash"></i> <strong>Delete draft</strong> ... unsurprisingly this will delete the draft  </li>
+<li><i class="fa fa-copy"></i> <strong>Create new configurator based on draft</strong> ... will create a new configurator based on the selected draft  </li>
+</ul>
+<p>At the end we show you some embed information and the URL for the currently published configurator.</p>
+<h2 id="configurator-deletion">Configurator deletion</h2>
+<p>You can now restore a recently deleted configurator up to seven days after the deletion took place. </p>
+<p>This feature comes also with a Combeenation performance boost. Several actions like deleting configurators, deleting resources and so on now happen in the blink of an eye. Our system later will take care of deleting those items once and for all.</p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+{{ExtraScript}}
+</body>
+</html>
