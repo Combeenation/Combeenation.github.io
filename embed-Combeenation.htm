@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Embedding a configurator - Combeenation Docs</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="css/styles/vs.css">
+    <link rel="stylesheet" href="css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="Configurator.htm">Configurator</a></span></li>
+<li class="tocentry current"><a class="current" href="embed-Combeenation.htm">Embedding a configurator</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#quick-start">Quick start</a></li>
+<li class="tocentry"><a href="#how-does-the-embedding-work">How does the embedding work?</a></li>
+<li class="tocentry"><a href="#embed-code-in-detail">Embed code in detail</a></li>
+<li class="tocentry"><a href="#whitelisting">Whitelisting</a></li>
+<li class="tocentry"><a href="#configurator-urls">Configurator URLs</a></li>
+</ul>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="Configuratoreditor.htm">Configurator editor</a></span>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="index.htm">Getting Started</a></li> / <li><a href="Configurator.htm">Configurator</a></li> / <li><a href="embed-Combeenation.htm">Embedding a configurator</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="embed-combeenation">Embedding a configurator</h1>
+<p>This page should give you an overview on how to embed a Combeenation configurator onto your own website.</p>
+<h2 id="quick-start">Quick start</h2>
+<p>The embed code for each configurator will be shown in the <a href="https://portal.combeenation.com/#gallery/" target="_blank">gallery</a>. 
+Basically you just need to paste the code on the desired place on your website and you're good to go.</p>
+<p>If you are using a CMS (e.g. Wordpress, Drupal, ...) there is most likely some kind of HTML editor, which allows you to add the embed code to the page. If you are unsure where to put the code or don't have access to your code please contact your web administrator.</p>
+<h2 id="how-does-the-embedding-work">How does the embedding work?</h2>
+<p>Configurators are embedded with the help of an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe" target="_blank"><code>iframe</code></a>, this HTML 5 element basically just displays another website (e.g. Combeenation configurator) in the current website (e.g. your website).</p>
+<p><svg width="700" height="250">
+    <rect x="0" y="0" width="700" height="250" style="fill:#9FC5E8;stroke:black;stroke-width:2" />
+    <rect x="50" y="50" width="600" height="150" style="fill:#CFE2F3;stroke:black;stroke-width:1" />
+    <text x="10" y="25" >Parent page: https: //www.yourcompany.com</text>
+    <text x="60" y="75" >iframe: https://portal.combeenation.com/Cfgr/YourCompany/YourConfigurator/
+</text>
+</svg></p>
+<h2 id="embed-code-in-detail">Embed code in detail</h2>
+<p>As already mentioned the embed code can be found in the <a href="https://portal.combeenation.com/#gallery/" target="_blank">gallery</a> and contains the name of your company and  configurator and looks simliar to the following one: </p>
+<pre class="nocode">&lt;script src=&quot;https://portal.combeenation.com/plugin/YOURCOMPANY/YOURCONFIGURATOR&quot;&gt;&lt;/script&gt;
+&lt;iframe class=&quot;cbn-configframe&quot; frameborder=&quot;0&quot; src=&quot;https://portal.combeenation.com/Cfgr/YOURCOMPANY/YOURCONFIGURATOR&quot;&gt;&lt;/iframe&gt;
+</pre><p>The first element (<code>&lt;script&gt;</code>) which will be included is the <strong>Combeenation plugin</strong>. The plugin is necessary, because it enables the communication between the iframe and the parent page via cross document messaging (<a href="https://en.wikipedia.org/wiki/Web_Messaging" target="_blank">Wikipedia</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage" target="_blank">MDN web docs</a>). The communication is needed for e.g. passing the checkout data to the parent page or reopening the configurator after a product has been shared on social media.</p>
+<p>The second html element is the <code>&lt;iframe&gt;</code> which contains the <strong>Combeenation configurator</strong>, which can be placed anywhere on the page. The iframe has already the CSS class <code>cbn-configframe</code> set, which shouldn't be removed, because it is used by the plugin to identify the configurator. There are several properties in the <code>iframe</code> which may be useful and can be modified:</p>
+<ul>
+<li><code>src</code> ... address of the document which should be embedded. By default it contains the copy URL of the configurator, which means that every user which enters the page starts with a new configuration. If you want a user to edit an existing configuration you can simply set the edit URL for the iframe. A list of useful URLs can be found <a href="#configurator-urls">here</a></li>
+<li><code>frameborder</code> ... Specifies whether or not to display a border around the iframe (default: 0)</li>
+<li><code>height</code> ... Height of the iframe</li>
+<li><code>width</code> ... Width of the iframe</li>
+</ul>
+<h2 id="whitelisting">Whitelisting</h2>
+<p>Combeenation also allows you to set whitelisted domains for you configurator. This gives you the power to display the configurator only on your whitelisted domains, this way others (e.g. competitors) can't embed the configurator on their page. </p>
+<p>The whitelisted domains will be enforced with the help of the <a href="https://content-security-policy.com/" target="_blank">Content-Security-Policy</a> header, which will be set for your configurator.</p>
+<h2 id="configurator-urls">Configurator URLs</h2>
+<p>Each URL starts with <code>https://portal.combeenation.com/Cfgr</code> and can end with ...</p>
+<ul>
+<li><code>/{YourCompany}/{YourConfigurator}</code> ... the default configurator URL which will start a new configuration based on the default preset</li>
+<li><code>/{YourCompany}/{YourConfigurator}/{PresetName}</code> ... configurator URL which will start a new configuration based on the given preset preset</li>
+<li><code>/{YourCompany}/{YourConfigurator}/{ConfigurationId}/copy</code> ... URL which starts a new configuration based on a given configuration</li>
+<li><code>/{YourCompany}/{YourConfigurator}/{ConfigurationId}/edit/{ConfigurationAuthToken}</code> ... URL which lets the user edit an existing configuration</li>
+</ul>
+<p>Key</p>
+<ul>
+<li>{YourCompany} ... the reference name for your company</li>
+<li>{YourConfigurator} ... the reference name for your configurator</li>
+<li>{PresetName} ... the id or the name of your preset (see preset view in configurator editor, where you can also set the default preset for your configurator)</li>
+<li>{ConfigurationId} ... is a unique number which identifies a configuration, will be generated for each new configuration.</li>
+<li>{ConfigurationAuthToken} ... the auth token which is needed to edit an existing configuration, will be generated for each new configuration.</li>
+</ul>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/modernizr-2.8.3.min.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script src="js/theme.js"></script>
+{{ExtraScript}}
+</body>
+</html>
