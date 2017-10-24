@@ -84,7 +84,7 @@
                 <div role="main">
                     <div class="section">
 <h1 id="configurator-checkout">Configurator checkout</h1>
-<p>This page focuses on the Combeenation checkout, this is the process where the information about the customized product will be passed to your system (e.g. cart, ERP system, API, ...). </p>
+<p>This page focuses on the Combeenation checkout, this is the process where the information about the customized product will be passed to your system (e.g. shopping cart, ERP system, API, ...). </p>
 <p>The process usually starts with the user pressing the &quot;Checkout&quot; button, which can be placed anywhere in your configurator. Based on the checkout type you've defined in the <code>CheckoutComponent</code> a certain action will then be performed.
 Note that the <code>CheckoutComponent</code> can have multiple checkout types, but there is only one active one (defined via the property <code>Shop</code>).</p>
 <p>Overview of the different checkout types:</p>
@@ -92,24 +92,24 @@ Note that the <code>CheckoutComponent</code> can have multiple checkout types, b
 <p>Basically the &quot;do it yourself&quot; (DIY) checkout lets you decide which data (e.g. amount, description, generated images, ...) will be passed to the parent page when a user clicks the &quot;Checkout&quot; button.</p>
 <p>The data will be defined within the property  <code>Parameter</code> in the DIY shop. Since it is just text, we recommend to use the JSON format for further processing.</p>
 <p>As already described in the <a href="embedding.htm#embed-code-detail">embedding page</a>, the configurator will communicate with the parent page via cross document messaging during the checkout. Technically speaking this all happens within your browser on the client side, so it is extremly fast.</p>
-<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>Note that no sensitive information (e.g. price) should be passed in a DIY checkout parameter. Since it's client code, data can always be altered. </p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>Note that no sensitive information (e.g. price) should be passed in a DIY checkout parameter. Malicious users could alter the data before it is passed to the parent page. </p>
 <p>e.g. instead of putting the total price in the checkout parameters, just pass the SKU with the according quantity to your parent page and let your system calculate the total price.</p>
-</div><p>Finally you just have to implement the JavaScript function <code>windows.Combeenation.onCheckout</code> on your parent page. This function will be called during the checkout and has one parameter which contains:</p>
+</div><p>Finally you just have to implement the JavaScript function <code>window.Combeenation.onCheckout</code> on your parent page. This function will be called during the checkout and has one parameter which contains:</p>
 <ul>
 <li>configuration id</li>
 <li>configuration auth token</li>
-<li><code>CheckoutParameters</code> the value you have defined previously</li>
+<li><code>CheckoutParameters</code> are the values you have defined previously</li>
 <li>queryParameters which are set to the iframe url</li>
 </ul>
-<p>With this data on your hand you can implement your further checkout logic on your own (do it yourself). Example implementation of the checkout function:</p>
-<pre class="nocode">function CombeenationSaveToCart(data) {
+<p>With this data on your hand you can implement your further checkout logic on your own (hence the name &quot;do it yourself&quot;). Example implementation of the checkout function:</p>
+<pre class="nocode">function Combeenation.onCheckout(data) {
   /*
   structure of the parameter 'data':
   {
     id, // id of the configuration (Provided by Combeenation)
     authentication, // authentication token, which is needed if a customer wants to edit the configuration. (Provided by Combeenation)
-    checkoutParameters, // contains the value of the property 'Parameter' (Provided by the person who builds the configurator)
-    queryParameters // contains all query parameters which are added to the iframe URL, will be passed through Combeenation (Provided by the person who inserts the iframe in the page)
+    checkoutParameters, // contains the value of the checkout component property 'Parameter' (Provided by you)
+    queryParameters // contains all query parameters which are added to the iframe URL (Provided by the person who inserts the iframe in the page)
   }
   */
 
@@ -127,14 +127,14 @@ Note that the <code>CheckoutComponent</code> can have multiple checkout types, b
   Attachments : [{ FileName : &quot;&quot;, ContentEncoding : Encoding.Utf8, Content : &quot;&quot; }]
 }]
 </pre><div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>You can set a from address, but per default this will only be used as reply address and the real from address will be <code>mail.combeenation.com</code>. </p>
-<p>In order to use your companies domain as sending domain, we have to add your domain to our mail provider. This requires you to set some <a href="https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail" target="_blank">DKIM TXT entry</a> on your domain provider. Since this is currently not fully automated you should <a href="https://www.combeenation.com/service/" target="_blank">contact us</a>, if you need your own sending domain.</p>
+<p>In order to use your company's domain as sending domain, we have to add your domain to our mail provider. This requires you to set some <a href="https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail" target="_blank">DKIM TXT entry</a> on your domain provider. Since this is currently not fully automated you should <a href="https://www.combeenation.com/service/" target="_blank">contact us</a>, if you need your own sending domain.</p>
 </div><p>The maximum size of all attachments combined is currently 5 MB.</p>
 <h2 id="magento">Magento</h2>
-<p>We are also supporting Magento 1.9 and Magento 2. We've have different approaches to add a product to a Magento cart, to find the proper solution for you, please <a href="https://www.combeenation.com/service/" target="_blank">contact us</a>.</p>
+<p>We are also supporting Magento 1.9 and Magento 2. We've different approaches to add a product to a Magento cart, to find the proper solution for you, please <a href="https://www.combeenation.com/service/" target="_blank">contact us</a>.</p>
 <h2 id="woocommerce">WooCommerce</h2>
 <p>Combeenation also supports WooCommerce, for detailed information <a href="https://www.combeenation.com/service/" target="_blank">reach out to us</a>.</p>
 <h2 id="other-api-erp-...">Other (API, ERP, ...)</h2>
-<p>Combeenation also offers custom checkout solutions for your business case. So if you already have an API or want the vital information to be passed into an ERP, we surely will find a solution that fits your needs. Just <a href="https://www.combeenation.com/service/" target="_blank">contact us</a> and tell us about your case.</p>
+<p>Combeenation also offers custom checkout solutions for your business case. So if you already have an API or want the configurator data to be passed into an ERP, we surely will find a solution that fits your needs. Just <a href="https://www.combeenation.com/service/" target="_blank">contact us</a> and tell us about your case.</p>
 
                     </div>
                 </div>

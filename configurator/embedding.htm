@@ -84,7 +84,7 @@
                 <div role="main">
                     <div class="section">
 <h1 id="embed-combeenation">Embedding a configurator</h1>
-<p>This page should give you an overview on how to embed a Combeenation configurator onto your own website.</p>
+<p>This page should give you an overview on how to embed a Combeenation configurator into your own website.</p>
 <h2 id="quick-start">Quick start</h2>
 <p>The embed code for each configurator will be shown in the <a href="https://portal.combeenation.com/#gallery/" target="_blank">gallery</a>. 
 Basically you just need to paste the code on the desired place on your website and you're good to go.</p>
@@ -102,8 +102,8 @@ Basically you just need to paste the code on the desired place on your website a
 <p>As already mentioned the embed code can be found in the <a href="https://portal.combeenation.com/#gallery/" target="_blank">gallery</a> and contains the name of your company and  configurator and looks simliar to the following one: </p>
 <pre class="nocode">&lt;script src=&quot;https://portal.combeenation.com/plugin/YOURCOMPANY/YOURCONFIGURATOR&quot;&gt;&lt;/script&gt;
 &lt;iframe class=&quot;cbn-configframe&quot; frameborder=&quot;0&quot; src=&quot;https://portal.combeenation.com/Cfgr/YOURCOMPANY/YOURCONFIGURATOR&quot;&gt;&lt;/iframe&gt;
-</pre><p>The first element (<code>&lt;script&gt;</code>) which will be included is the <strong>Combeenation plugin</strong>. The plugin is necessary, because it enables the communication between the iframe and the parent page via cross document messaging (<a href="https://en.wikipedia.org/wiki/Web_Messaging" target="_blank">Wikipedia</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage" target="_blank">MDN web docs</a>). The communication is needed for e.g. passing the <a href="checkout.htm#diy-checkout">checkout data</a> to the parent page or reopening the configurator after a product has been shared on social media.</p>
-<p>The second html element is the <code>&lt;iframe&gt;</code> which contains the <strong>Combeenation configurator</strong>, which can be placed anywhere on the page. The iframe has already the CSS class <code>cbn-configframe</code> set, which shouldn't be removed, because it is used by the plugin to identify the configurator. There are several properties in the <code>iframe</code> which may be useful and can be modified:</p>
+</pre><p>The first element (<code>&lt;script&gt;</code>) which will be included is the <strong>Combeenation plugin</strong>. The plugin enables the communication between the iframe and the parent page via cross document messaging (<a href="https://en.wikipedia.org/wiki/Web_Messaging" target="_blank">Wikipedia</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage" target="_blank">MDN web docs</a>). The communication is needed for e.g. passing the <a href="checkout.htm#diy-checkout">checkout data</a> to the parent page or reopening the configurator after a product has been shared on social media.</p>
+<p>The second html element is the <code>&lt;iframe&gt;</code> which contains the <strong>Combeenation configurator</strong>, which can be placed anywhere on the page. The iframe already has the CSS class <code>cbn-configframe</code> set, which shouldn't be removed, because it is used by the plugin to identify the configurator. There are several properties in the <code>iframe</code> which may be useful and can be modified:</p>
 <ul>
 <li><code>src</code> ... address of the document which should be embedded. By default it contains the copy URL of the configurator, which means that every user which enters the page starts with a new configuration. If you want a user to edit an existing configuration you can simply set the edit URL for the iframe. A list of useful URLs can be found <a href="#configurator-urls">here</a></li>
 <li><code>frameborder</code> ... Specifies whether or not to display a border around the iframe (default: 0)</li>
@@ -117,17 +117,17 @@ Basically you just need to paste the code on the desired place on your website a
 <p>Each URL starts with <code>https://portal.combeenation.com/Cfgr</code> and can end with ...</p>
 <ul>
 <li><code>/{YourCompany}/{YourConfigurator}</code> ... the default configurator URL which will start a new configuration based on the default preset</li>
-<li><code>/{YourCompany}/{YourConfigurator}/{PresetName}</code> ... configurator URL which will start a new configuration based on the given preset preset</li>
+<li><code>/{YourCompany}/{YourConfigurator}/{PresetName}</code> ... configurator URL which will start a new configuration based on the given preset</li>
 <li><code>/{YourCompany}/{YourConfigurator}/{ConfigurationId}/copy</code> ... URL which starts a new configuration based on a given configuration</li>
 <li><code>/{YourCompany}/{YourConfigurator}/{ConfigurationId}/edit/{ConfigurationAuthToken}</code> ... URL which lets the user edit an existing configuration</li>
 </ul>
-<p>Key</p>
+<p>Here is an explanation of the substitutes (terms in curly braces <code>{}</code>)</p>
 <ul>
-<li>{YourCompany} ... the reference name for your company</li>
-<li>{YourConfigurator} ... the reference name for your configurator</li>
-<li>{PresetName} ... the id or the name of your preset (see preset view in configurator editor, where you can also set the default preset for your configurator)</li>
-<li>{ConfigurationId} ... is a unique number which identifies a configuration, will be generated for each new configuration.</li>
-<li>{ConfigurationAuthToken} ... the auth token which is needed to edit an existing configuration, will be generated for each new configuration.</li>
+<li><code>{YourCompany}</code> ... the reference name for your company</li>
+<li><code>{YourConfigurator}</code> ... the reference name for your configurator</li>
+<li><code>{PresetName}</code> ... the id or the name of your preset (see preset view in configurator editor, where you can also set the default preset for your configurator)</li>
+<li><code>{ConfigurationId}</code> ... is a unique number which identifies a configuration, will be generated for each new configuration.</li>
+<li><code>{ConfigurationAuthToken}</code> ... text which is needed to edit an existing configuration, will be generated for each new configuration.</li>
 </ul>
 
                     </div>
