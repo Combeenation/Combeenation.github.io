@@ -40,6 +40,8 @@
 <ul>
 <li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hive/index.htm">Hive</a></span></li>
 
+<li class="tocentry"><a href="../hive/comments.htm">Comments</a>
+</li>
 <li class="tocentry"><a href="../hive/if.htm">The If Expression</a>
 </li>
 <li class="tocentry"><a href="../hive/number.htm">Working with Numbers</a>
@@ -50,19 +52,24 @@
 <li class="tocentry"><a href="#comparing-text">Comparing Text</a></li>
 <li class="tocentry"><a href="#functions">Functions</a></li>
 <li class="tocentry"><a href="#length">Length</a></li>
+<li class="tocentry"><a href="#contains">Contains</a></li>
 <li class="tocentry"><a href="#toUpper">ToUpper</a></li>
 <li class="tocentry"><a href="#toLower">ToLower</a></li>
 <li class="tocentry"><a href="#take">Take</a></li>
 <li class="tocentry"><a href="#skip">Skip</a></li>
+<li class="tocentry"><a href="#replace">Replace</a></li>
 <li class="tocentry"><a href="#encodeHtml">EncodeHtml</a></li>
 <li class="tocentry"><a href="#decodeHtml">DecodeHtml</a></li>
 <li class="tocentry"><a href="#encodeUrl">EncodeUrl</a></li>
 <li class="tocentry"><a href="#decodeUrl">DecodeUrl</a></li>
 <li class="tocentry"><a href="#toNumber">ToNumber</a></li>
 <li class="tocentry"><a href="#toColor">ToColor</a></li>
-<li class="tocentry"><a href="#toSvg">ToSvg</a></li>
 </ul>
 <li class="tocentry"><a href="../hive/table.htm">The RecordComponent</a>
+</li>
+<li class="tocentry"><a href="../hive/configurator.htm">Your Configurator</a>
+</li>
+<li class="tocentry"><a href="../hive/configuration.htm">Current Configuration</a>
 </li>
 <li class="tocentry"><a href="../hive/math.htm">The Math Library</a>
 </li>
@@ -135,7 +142,7 @@ All the operations and functions shown here work with text literals, components 
 </tbody>
 </table>
 <h2 id="comparing-text">Comparing Text</h2>
-<p>There are currently two operators for comparing <code>Text</code> values:</p>
+<p>There are currently tree operators for comparing <code>Text</code> values:</p>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
@@ -148,23 +155,33 @@ All the operations and functions shown here work with text literals, components 
 <tbody>
 <tr>
 	<td>Equal to</td>
-	<td><code>&quot;up&quot; = &quot;UP&quot;</code></td>
+	<td><code>&quot;up&quot;  = &quot;UP&quot;</code></td>
+	<td align="right"><code>false</code></td>
+	<td>Returns <code>true</code> if two texts are <strong>equal</strong>, case sensitive</td>
+</tr>
+<tr>
+	<td>Equal to</td>
+	<td><code>&quot;up&quot; ~= &quot;UP&quot;</code></td>
 	<td align="right"><code>true</code></td>
-	<td>Returns <code>true</code> if two texts are <strong>equal</strong></td>
+	<td>Returns <code>true</code> if two texts are <strong>equal</strong>, case insensitive</td>
 </tr>
 <tr>
 	<td>Not Equal to</td>
 	<td><code>&quot;up&quot; &lt;&gt; &quot;UP&quot;</code></td>
-	<td align="right"><code>false</code></td>
-	<td>Returns <code>true</code> if two texts are <strong>not equal</strong></td>
+	<td align="right"><code>true</code></td>
+	<td>Returns <code>true</code> if two texts are <strong>not equal</strong>, case sensitive</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Note</strong> that both operators are <strong>case insensitive</strong>, which means that lower case and upper case characters are considered equal.</p>
+<p><strong>Note</strong> that the <code>=</code> and <code>&lt;&gt;</code> operators are <strong>case sensitive</strong>, which means that lower case characters are <strong>not equal</strong> to their upper case counterparts.  
+</p>
+<p>The <code>~=</code> operator is case <strong>insensitive</strong>, which means it doesn't matter whether a character is lower or upper case.  
+</p>
+<p>There is no case insensitive version of the <code>&lt;&gt;</code> operator, but you can negate the outcome of the <code>~=</code> operator to achieve the same goal: <code>not(&quot;up&quot; ~= &quot;UP&quot;)</code> returns <code>false</code> for example.</p>
 <div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p><strong>Whitespace</strong> characters such as spaces, tabs or line breaks are <strong>significant</strong> when comparing text!<br />
-The expression <code>&quot;a&quot; = &quot;a &quot;</code> is <code>false</code> because there is a space in the second text that is not present in the first.</p>
+The expression <code>&quot;a&quot; = &quot;a &quot;</code> is <code>false</code> because there is a space in the second text that is not present in the first.  
+</p>
 </div><h2 id="functions">Functions</h2>
-<p>The <code>Text</code> type offers the following functions:</p>
 <table class="table table-bordered-all table-responsive">
 <thead>
 <tr>
@@ -176,6 +193,10 @@ The expression <code>&quot;a&quot; = &quot;a &quot;</code> is <code>false</code>
 <tr>
 	<td><a href="#length">length</a></td>
 	<td>Returns the number of characters in a text</td>
+</tr>
+<tr>
+	<td><a href="#contains">contains</a></td>
+	<td>Returns <code>true</code> if a text contains a specific text</td>
 </tr>
 <tr>
 	<td><a href="#toUpper">toUpper</a></td>
@@ -192,6 +213,10 @@ The expression <code>&quot;a&quot; = &quot;a &quot;</code> is <code>false</code>
 <tr>
 	<td><a href="#skip">skip</a></td>
 	<td>Returns a text with a specified number of characters omitted</td>
+</tr>
+<tr>
+	<td><a href="#replace">replace</a></td>
+	<td>Replaces all occurrences of a text with a different text</td>
 </tr>
 <tr>
 	<td><a href="#encodeHtml">encodeHtml</a></td>
@@ -217,10 +242,6 @@ The expression <code>&quot;a&quot; = &quot;a &quot;</code> is <code>false</code>
 	<td><a href="#toColor">toColor</a></td>
 	<td>Converts a text to a <code>Color</code></td>
 </tr>
-<tr>
-	<td><a href="#toSvg">toSvg</a></td>
-	<td>Converts a text to a <code>SVG</code> value</td>
-</tr>
 </tbody>
 </table>
 <h2 id="length">Length</h2>
@@ -240,6 +261,22 @@ The expression <code>&quot;a&quot; = &quot;a &quot;</code> is <code>false</code>
 <tr>
 	<td><code>&quot;awesome&quot;.length()</code></td>
 	<td align="right"><code>7</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="contains">Contains</h2>
+<p>Returns <code>true</code> if a text contains a specific text.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th align="right">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>&quot;awesome&quot;.contains(&quot;some&quot;)</code></td>
+	<td align="right"><code>true</code></td>
 </tr>
 </tbody>
 </table>
@@ -309,7 +346,8 @@ The expression <code>&quot;a&quot; = &quot;a &quot;</code> is <code>false</code>
 </tbody>
 </table>
 <h2 id="skip">Skip</h2>
-<p>Returns a text with a specified number of characters omitted.  </p>
+<p>Returns a text with a specified number of characters omitted.  
+</p>
 <ul>
 <li>If a negative number is used, characters will be skipped from the end of the text towards the beginning.</li>
 <li>If the number is greater than the number of characters in the text, an empty text will be returned.</li>
@@ -346,7 +384,31 @@ You can use either one and accomplish the same goal, but often it is easier to r
 <p><strong>Example:</strong> Imagine you wanted to extract <code>123</code> from an inventory number like <code>ST-123-XYZ</code>.<br />
 The most straight-forward way to accomplish this probably is <code>inventoryNumber.skip(3).take(3)</code>.<br />
 But you could just as well write <code>inventoryNumber.take(6).take(-3)</code>. The choice is yours!</p>
-</div><h2 id="encodeHtml">EncodeHtml</h2>
+</div><h2 id="replace">Replace</h2>
+<p>Replaces all occurrences of a text with a different text.</p>
+<ul>
+<li>If the searched text isn't found, the function will return the original text</li>
+<li>All occurrences of the searched text will be replaced, not just the first one.</li>
+</ul>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>&quot;awesome&quot;.replace(&quot;esome&quot;, &quot;ful&quot;)</code></td>
+	<td><code>&quot;awful&quot;</code></td>
+</tr>
+<tr>
+	<td><code>&quot;a;divided;text;&quot;.replace(&quot;;&quot;, &quot; &quot;)</code></td>
+	<td><code>&quot;a divided text &quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="encodeHtml">EncodeHtml</h2>
 <p><em>Coming soon!</em></p>
 <h2 id="decodeHtml">DecodeHtml</h2>
 <p><em>Coming soon!</em></p>
@@ -380,8 +442,6 @@ We made it easy to do so with the <code>or</code> operator: </p>
 <pre class="nocode">&quot;13$&quot;.toNumber() or 1
 </pre><p>In this example, the result will be <code>1</code>. </p>
 </div><h2 id="toColor">ToColor</h2>
-<p><em>Coming soon!</em></p>
-<h2 id="toSvg">ToSvg</h2>
 <p><em>Coming soon!</em></p>
 
                     </div>

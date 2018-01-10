@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Configurator - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/vs.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hive/index.htm">Hive</a></span></li>
+
+<li class="tocentry"><a href="../hive/comments.htm">Comments</a>
+</li>
+<li class="tocentry"><a href="../hive/if.htm">The If Expression</a>
+</li>
+<li class="tocentry"><a href="../hive/number.htm">Working with Numbers</a>
+</li>
+<li class="tocentry"><a href="../hive/text.htm">Working with Text</a>
+</li>
+<li class="tocentry"><a href="../hive/table.htm">The RecordComponent</a>
+</li>
+<li class="tocentry current"><a class="current" href="../hive/configurator.htm">Your Configurator</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#properties">Properties</a></li>
+<li class="tocentry"><a href="#accessing-components">Accessing Components</a></li>
+<li class="tocentry"><a href="#presets">Presets</a></li>
+</ul>
+<li class="tocentry"><a href="../hive/configuration.htm">Current Configuration</a>
+</li>
+<li class="tocentry"><a href="../hive/math.htm">The Math Library</a>
+</li>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configuratoreditor.htm">Configurator editor</a></span>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../hive%2findex.htm">Hive</a></li> / <li><a href="../hive%2fconfigurator.htm">Your Configurator</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="your-configurator">Your Configurator</h1>
+<p>Everything you create in the Configurator editor is either directly or indirectly connected to your configurator. With the <code>configurator</code> variable you can access all these things and additional information about your configurator. </p>
+<h2 id="properties">Properties</h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>IsDraft</code></td>
+	<td>This will be <code>true</code> inside a draft and <code>false</code> in a published configurator.</td>
+</tr>
+<tr>
+	<td><code>StartUrl</code></td>
+	<td>The URL for starting a new configuration based on the default preset.</td>
+</tr>
+<tr>
+	<td><code>Components</code></td>
+	<td>A <code>map</code> of all the components you have created.</td>
+</tr>
+</tbody>
+</table>
+<p>You can access these properties like so: <code>configurator.IsDraft</code></p>
+<h2 id="accessing-components">Accessing Components</h2>
+<p>In addition to the properties above, you can also access any of your components with the <code>configurator</code> variable. For example, <code>configurator.Price</code> would refer to a &quot;Price&quot; component. Of course, you can also just write <code>Price</code> to work with that component – usually.</p>
+<p>You may end up in a situation where something else is also called &quot;Price&quot; and simply writing <code>Price</code> will return that thing. This can happen for example in a <code>GraphicComponent</code>, when you give one of your visuals the name &quot;Price&quot;. Inside that component, &quot;Price&quot; will then refer to your visual and not the <code>Price</code> component. To fix that problem, you can write <code>configurator.Price</code> to get to your component.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p><strong>Super special case:</strong> if you end up in a situation where something else is called <em>configurator</em>, the solution above won't work. You can't use the <code>configurator</code> variable because that other thing is also called &quot;configurator&quot;.</p>
+<p>The best way to avoid this problem is not to call anything &quot;configurator&quot; – but in case you have to, there's a special keyword to help you out: <code>@top</code>. This rarely used keyword is always reachable and enables you to access things &quot;at the top&quot;, like the <code>configurator</code> variable. For example, <code>@top.configurator.Price</code> will always refer to the &quot;Price&quot; component, no matter what.</p>
+</div><h2 id="presets">Presets</h2>
+<p>You can work with the presets that you have created for your configurator by using the <code>presets</code> variable. Similar to <code>configurator</code>, you can access any preset by name by writing <code>presets.MyPreset</code> (where &quot;MyPreset&quot; is the name you've given your preset). However, in this case the <code>presets</code> variable is mandatory – &quot;MyPreset&quot; alone will not return your preset.</p>
+<p>Additionally, the <code>presets</code> variable has these built-in properties:</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>Current</code></td>
+	<td>Returns the preset on which the current configuration is based.</td>
+</tr>
+<tr>
+	<td><code>Default</code></td>
+	<td>Returns the default preset of your configurator.</td>
+</tr>
+<tr>
+	<td><code>All</code></td>
+	<td>Returns a <code>map</code> of all the presets you have created.</td>
+</tr>
+</tbody>
+</table>
+<p>Once you have obtained a preset, you can use its properties:</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>Id</code></td>
+	<td>The unique identifier of this preset.</td>
+</tr>
+<tr>
+	<td><code>StartUrl</code></td>
+	<td>The URL for starting a brand-new configuration based on this preset.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<p>To get the URL to start a new configuration based on the same preset as the current configuration:</p>
+<pre class="nocode">presets.Current.StartUrl
+</pre><div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Just like <code>configurator</code>, the <code>presets</code> variable also lives &quot;at the top&quot; – meaning you can use <code>@top.presets</code> to always reach it, even if something else is called &quot;presets&quot;.</p>
+</div>
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+{{ExtraScript}}
+</body>
+</html>
