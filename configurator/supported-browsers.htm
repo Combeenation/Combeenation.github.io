@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Supported browsers - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../Configurator.htm">Configurator</a></span></li>
+<li class="tocentry"><a href="../configurator/general.htm">General</a>
+</li>
+<li class="tocentry"><a href="../configurator/embedding.htm">Embedding</a>
+</li>
+<li class="tocentry"><a href="../configurator/checkout.htm">Checkout</a>
+</li>
+<li class="tocentry"><a href="../configurator/checkout-types.htm">Checkout types</a>
+</li>
+<li class="tocentry"><a href="../configurator/user-input-sanitization.htm">User input sanitization</a>
+</li>
+<li class="tocentry current"><a class="current" href="../configurator/supported-browsers.htm">Supported browsers</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#changelog">Changelog</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#mar-2019">Mar 2019</a></li>
+
+<li class="tocentry"><a href="#version-1.21.5"><a href="../releases.htm#version-1.21.5">Version 1.21.5</a></a></li>
+
+
+</ul>
+</li>
+
+
+
+</ul>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../api/index.htm">API</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../cjs-utils/index.htm">Custom JS Utils</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../3dviewer/index.htm">3d Viewer</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a></span>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../Configurator.htm">Configurator</a></li> / <li><a href="../configurator/supported-browsers.htm">Supported browsers</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="supported-browsers">Supported browsers<a class="headerlink" href="#supported-browsers" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>The following browsers are officially supported by Combeenation:</p>
+<ul>
+<li>Chrome 60+</li>
+<li>Firefox 57+</li>
+<li>Safari 10+</li>
+<li>Edge 15+</li>
+</ul>
+<!--
+Even though we're officially supporting only the mentioned browsers above, also some older browsers will pass our
+feature check and won't see the "unsupported browser" page. They'll most likely won't experience any bugs in the
+configurator.
+
+Reasons for "curtailing" the list of officially supported browsers:
+  • Some of the older browsers which pass our feature check are not available anymore in Browserstack (e.g. Edge < 15).
+    Fixing bugs especially for them would be a nightmare.
+  • They don't have any significant market share anymore.
+
+Reasons for chosing the browsers we chose:
+  • Chrome 60+    Mostly random pick which is ~ 1 year old at the time of writing
+  • Firefox 57+   Release of "Firefox quantum" which kicked old plugins to only support web extensions.
+                  By chosing this version we're explicitly "locking out" users who chose to stay at old versions before
+                  quantum and therefore prevent automatic regular updates.
+  • Safari 10+
+  • Edge 15+      Older versions are not available in Browserstack anymore
+-->
+<h2 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="mar-2019">Mar 2019<a class="headerlink" href="#mar-2019" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Before this date, we supported the following browsers:</p>
+<ul>
+<li>Chrome 60+</li>
+<li>Firefox 57+</li>
+<li>IE 11+</li>
+<li>Safari 10+</li>
+<li>Edge 15+</li>
+</ul>
+<h3 id="version-1.21.5"><a href="../releases.htm#version-1.21.5">Version 1.21.5</a><a class="headerlink" href="#version-1.21.5" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Before this release, we supported the following browsers:</p>
+<ul>
+<li>
+Android platform (mobiles, tablets etc.):
+<ul>
+<li>Firefox 40+</li>
+<li>WebKit 536+ (~ Chrome 19)</li>
+</ul>
+</li>
+<li>
+All other platforms (Desktop PC, iPhone, iPad, ...):
+<ul>
+<li>Firefox 24+</li>
+<li>IE 10+</li>
+<li>Safari 6.1+</li>
+<li>WebKit 536+ (~ Chrome 19)</li>
+</ul>
+</li>
+</ul>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

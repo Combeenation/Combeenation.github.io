@@ -1,0 +1,83 @@
+#release-notes ~ h2,
+#release-notes-3d-viewer ~ h2,
+#release-notes-cjs-utils ~ h2 {
+	margin-bottom: 0;
+}
+
+#release-notes ~ h2 + p,
+#release-notes-3d-viewer ~ h2 + p,
+#release-notes-cjs-utils ~ h2 + p {
+	font-size: 12px;
+	margin-bottom: 8px;
+}
+
+#release-notes ~ .table,
+#release-notes-3d-viewer ~ .table,
+#release-notes-cjs-utils ~ .table {
+	border: none;
+	box-shadow: none;
+}
+
+#release-notes ~ .table ul,
+#release-notes-3d-viewer ~ .table ul,
+#release-notes-cjs-utils ~ .table ul {
+	margin: 0;
+}
+
+#release-notes ~ .table thead,
+#release-notes-3d-viewer ~ .table thead,
+#release-notes-cjs-utils ~ .table thead {
+	display: none;
+}
+
+#release-notes ~ .table td,
+#release-notes-3d-viewer ~ .table td,
+#release-notes-cjs-utils ~ .table td {
+	border: none;
+	padding: 0 8px 0 0;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+#release-notes ~ .table td:first-child,
+#release-notes-3d-viewer ~ .table td:first-child,
+#release-notes-cjs-utils ~ .table td:first-child {
+	text-align: right;
+	width: 80px;
+}
+
+.rn-new,
+.rn-remove,
+.rn-fix,
+.rn-change,
+.rn-breakingchange {
+	font: inherit;
+	font-weight: bold;
+	/*width: 80px;*/
+}
+
+.rn-new::before {
+	content: 'New';
+	color: green;
+}
+
+.rn-remove::before {
+	content: 'Remove';
+	color: red;
+}
+
+.rn-breakingchange::before {
+	content: 'Breaking Change';
+	color: red;
+}
+
+.rn-fix::before {
+	content: 'Fix';
+	color: orange;
+}
+
+.rn-change::before {
+	content: 'Change';
+	color: #70aaf0;
+}
+
