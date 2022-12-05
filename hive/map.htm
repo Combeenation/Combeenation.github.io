@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Map - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hive/index.htm">Hive</a></span></li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveLanguage.htm">Language</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hiveTypes.htm">Types</a></span></li>
+<li class="tocentry"><a href="../hive/number.htm">Number</a>
+</li>
+<li class="tocentry"><a href="../hive/text.htm">Text</a>
+</li>
+<li class="tocentry"><a href="../hive/logic.htm">Logic</a>
+</li>
+<li class="tocentry"><a href="../hive/list.htm">List</a>
+</li>
+<li class="tocentry current"><a class="current" href="../hive/map.htm">Map</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#existing-maps">Existing Maps</a></li>
+
+<li class="tocentry"><a href="#functions">Functions</a></li>
+
+<li class="tocentry"><a href="#length">length</a></li>
+
+<li class="tocentry"><a href="#get">get(key)</a></li>
+
+
+
+</ul>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveComponents.htm">Components</a></span>
+</li>
+<li class="tocentry"><a href="../hive/configurator.htm">Your Configurator</a>
+</li>
+<li class="tocentry"><a href="../hive/configuration.htm">Current Configuration</a>
+</li>
+<li class="tocentry"><a href="../hive/math.htm">Math</a>
+</li>
+<li class="tocentry"><a href="../hive/qrcode.htm">QRCode</a>
+</li>
+<li class="tocentry"><a href="../hive/hash.htm">Hash</a>
+</li>
+<li class="tocentry"><a href="../hive/result-visualization.htm">Result Visualization</a>
+</li>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../hive/index.htm">Hive</a></li> / <li><a href="../hiveTypes.htm">Types</a></li> / <li><a href="../hive/map.htm">Map</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="map">Map<a class="headerlink" href="#map" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>A map is similar to a <a href="list.htm">List</a> in that it contains multiple values, but contrary to a list it is not ordered. Instead, the items of a map can be accessed with a key, which is stored alongside each value in the map. In other words: keys are mapped to values, which is where the name &quot;Map&quot; comes from.</p>
+<p>Keys and Values can be of any type, so long as all keys have the same type and all values also have a common type.</p>
+<h2 id="existing-maps">Existing Maps<a class="headerlink" href="#existing-maps" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>It is not yet possible to create maps in rules, but you can use the maps that already exist in your configurator.</p>
+<p>These components have maps that you can work with:</p>
+<ul>
+<li><a href="graphicComponent.htm">GraphicComponent</a> has two maps: <code>Visuals</code> and <code>DynamicVisuals</code></li>
+<li><a href="resourceComponent.htm">ResourceComponent</a> has a <code>Resources</code> map</li>
+<li><a href="checkoutComponent.htm">CheckoutComponent</a> has a <code>Shops</code> map</li>
+</ul>
+<p>There are two more maps in every configurator:</p>
+<ul>
+<li>The <a href="configurator.htm#properties">configurator</a> has a <code>Components</code> map</li>
+<li><a href="configurator.htm#presets"><code>presets.All</code></a> is a map of all your presets</li>
+</ul>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="#length">length</a></td>
+	<td>Gets the number of items in the map</td>
+</tr>
+<tr>
+	<td><a href="#get">get(key)</a></td>
+	<td>Gets the value for a specified key</td>
+</tr>
+</tbody>
+</table>
+<h2 id="length">length<a class="headerlink" href="#length" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns the number of items in the map.</p>
+<pre><code class="hive">// gets the number of components in your configurator
+components.length()
+</code></pre>
+
+<h2 id="get">get(key)<a class="headerlink" href="#get" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns the value for a specified key, or <code>Empty</code> if the map contains no such key.</p>
+<pre><code class="hive">// get a resource by name
+myResourceComponent.Resources.Get(&quot;resource1&quot;)
+</code></pre>
+
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>When looking for keys, <code>get</code> uses the default equality operator as defined by the type of the keys in the map. </p>
+<p>All pre-defined maps have <code>Text</code> keys, which are compared in <a href="text.htm#comparing-text">a case-sensitive fashion</a>.</p>
+</div>
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

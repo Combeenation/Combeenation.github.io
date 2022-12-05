@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Current Configuration - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hive/index.htm">Hive</a></span></li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveLanguage.htm">Language</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveTypes.htm">Types</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveComponents.htm">Components</a></span>
+</li>
+<li class="tocentry"><a href="../hive/configurator.htm">Your Configurator</a>
+</li>
+<li class="tocentry current"><a class="current" href="../hive/configuration.htm">Current Configuration</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#properties">Properties</a></li>
+
+<li class="tocentry"><a href="#functions">Functions</a></li>
+
+<li class="tocentry"><a href="#authToken">The Authorization Token (AuthToken)</a></li>
+
+<li class="tocentry"><a href="#isFinished">IsFinished</a></li>
+
+<li class="tocentry"><a href="#getParameter">getParameter(name)</a></li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../hive/math.htm">Math</a>
+</li>
+<li class="tocentry"><a href="../hive/qrcode.htm">QRCode</a>
+</li>
+<li class="tocentry"><a href="../hive/hash.htm">Hash</a>
+</li>
+<li class="tocentry"><a href="../hive/result-visualization.htm">Result Visualization</a>
+</li>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../hive/index.htm">Hive</a></li> / <li><a href="../hive/configuration.htm">Current Configuration</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="the-current-configuration">The Current Configuration<a class="headerlink" href="#the-current-configuration" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>Every time one of your customers uses your configurator or you try out a draft of it, a configuration is created. This configuration is used to automatically save the user's progress, it can be copied or edited at a later time, shared on social networks or put in a shopping cart. See the <a href="../configurator/configuration.htm">configuration page</a> for more infos about the configuration in general.</p>
+<p>You can interact with the currently active configuration via the <code>configuration</code> variable.  </p>
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>Id</code></td>
+	<td>The unique ID of this configuration.</td>
+</tr>
+<tr>
+	<td><a href="#authToken"><code>AuthToken</code></a></td>
+	<td>The <a href="#authToken">Authorization Token</a> for this configuration.</td>
+</tr>
+<tr>
+	<td><a href="#isFinished"><code>IsFinished</code></a></td>
+	<td>Will be <code>false</code> for new configurations and <code>true</code> for configurations that <a href="#isFinished">have already been finished</a>.</td>
+</tr>
+<tr>
+	<td><code>EditUrl</code></td>
+	<td>A URL with which this configuration can be edited.</td>
+</tr>
+<tr>
+	<td><code>CopyUrl</code></td>
+	<td>A URL that will create a copy of this configuration.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="#getParameter"><code>getParameter(name)</code></a></td>
+	<td>Returns the value of a URL parameter.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="authToken">The Authorization Token (AuthToken)<a class="headerlink" href="#authToken" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Every configuration is protected with an authorization token. Only those that can provide this secret text are allowed to edit the configuration.</p>
+<p>The <code>AuthToken</code> is part of the <code>EditUrl</code> of a configuration. </p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>If you want to enable your users to continue a configuration at a later time or after they have put it into a shopping cart, we recommend you use the <code>EditUrl</code> of the <code>configuration</code>.<br />
+It should be pretty rare that you have to directly work with the <code>AuthToken</code> yourself.</p>
+</div><h2 id="isFinished">IsFinished<a class="headerlink" href="#isFinished" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Once a configuration has been put into a shopping cart or, more generally speaking, has been completed (or &quot;finished&quot;), you may want it to behave slightly differently when edited again. For example, you may want to change the text of a button from <em>&quot;Order now!&quot;</em> to <em>&quot;Save changes&quot;</em> when a customer opens a configuration from his shopping cart. </p>
+<p>You can use the <code>configuration.IsFinished</code> property to this end, as it will return <code>true</code> when the current configuration has already been completed at some point in the past. </p>
+<h2 id="getParameter">getParameter(name)<a class="headerlink" href="#getParameter" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>When you embed your configurator in your website, you can add URL parameters to the embed URL. These parameters can then be used to alter how the configurator looks or works. For example, you could pass the SKU of a product, the current language of the website or shop-system specific information to your configurator.</p>
+<p>In your configurator, you can obtain the value of an URL parameter with the <code>getParameter</code> function. This function will either return a Text value or <code>Empty</code> if the parameter has not been used:</p>
+<pre><code class="hive">// pass language by parameter, use &quot;en&quot; when parameter is not used
+
+configuration.getParameter(&quot;language&quot;) or &quot;en&quot;
+
+
+// pass ID of a shopping cart by parameter
+// be sure to provide a fallback value if the parameter is not used (e.g. &quot;&quot;)
+// ToNumber() might also return Empty if the parameter is not a number
+
+(configuration.getParameter(&quot;cartId&quot;) or &quot;&quot;).toNumber() or 1
+</code></pre>
+
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

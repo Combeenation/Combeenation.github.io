@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Number - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hive/index.htm">Hive</a></span></li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveLanguage.htm">Language</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hiveTypes.htm">Types</a></span></li>
+<li class="tocentry current"><a class="current" href="../hive/number.htm">Number</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#operations">Operations</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#comparing-numbers">Comparing Numbers</a></li>
+
+
+</ul>
+</li>
+
+<li class="tocentry"><a href="#functions">Functions</a></li>
+
+<li class="tocentry"><a href="#round">round(digits)</a></li>
+
+<li class="tocentry"><a href="#floor">floor</a></li>
+
+<li class="tocentry"><a href="#ceiling">ceiling</a></li>
+
+<li class="tocentry"><a href="#truncate">truncate</a></li>
+
+<li class="tocentry"><a href="#atLeast">atLeast(min)</a></li>
+
+<li class="tocentry"><a href="#atMost">atMost(max)</a></li>
+
+<li class="tocentry"><a href="#toText">toText(format)</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#toTextFormat">Format</a></li>
+
+
+</ul>
+</li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../hive/text.htm">Text</a>
+</li>
+<li class="tocentry"><a href="../hive/logic.htm">Logic</a>
+</li>
+<li class="tocentry"><a href="../hive/list.htm">List</a>
+</li>
+<li class="tocentry"><a href="../hive/map.htm">Map</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveComponents.htm">Components</a></span>
+</li>
+<li class="tocentry"><a href="../hive/configurator.htm">Your Configurator</a>
+</li>
+<li class="tocentry"><a href="../hive/configuration.htm">Current Configuration</a>
+</li>
+<li class="tocentry"><a href="../hive/math.htm">Math</a>
+</li>
+<li class="tocentry"><a href="../hive/qrcode.htm">QRCode</a>
+</li>
+<li class="tocentry"><a href="../hive/hash.htm">Hash</a>
+</li>
+<li class="tocentry"><a href="../hive/result-visualization.htm">Result Visualization</a>
+</li>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../hive/index.htm">Hive</a></li> / <li><a href="../hiveTypes.htm">Types</a></li> / <li><a href="../hive/number.htm">Number</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="number">Number<a class="headerlink" href="#number" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>Numbers are used for all kinds of calculations. There are literal numbers, like <code>7</code> or <code>1.5</code>, but a component or variable can also be of type <code>Number</code>. Both kinds can be used interchangeably and everything described on this page applies to either kind.</p>
+<p>For example, you can call a function like <code>round()</code> on a component: <code>price.round()</code> or on a literal number: <code>13.5.round()</code>.</p>
+<h2 id="operations">Operations<a class="headerlink" href="#operations" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The following arithmetic operations are available in Hive:<br />
+<em>(The examples assume that there is a component <code>price</code> with a value of <code>5</code>.)</em></p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Example</th>
+	<th align="right">Result</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Negate</td>
+	<td><code>-price</code></td>
+	<td align="right"><code>-5</code></td>
+	<td>Gets the inverse of a number</td>
+</tr>
+<tr>
+	<td>Add</td>
+	<td><code>price + 2</code></td>
+	<td align="right"><code>7</code></td>
+	<td>Adds two numbers</td>
+</tr>
+<tr>
+	<td>Subtract</td>
+	<td><code>2 - price</code></td>
+	<td align="right"><code>-3</code></td>
+	<td>Subtracts one number from another</td>
+</tr>
+<tr>
+	<td>Multiply</td>
+	<td><code>2 * price</code></td>
+	<td align="right"><code>10</code></td>
+	<td>Multiplies two numbers</td>
+</tr>
+<tr>
+	<td>Divide</td>
+	<td><code>price / 2</code></td>
+	<td align="right"><code>2.5</code></td>
+	<td>Divides one number by another</td>
+</tr>
+<tr>
+	<td>Exponentiation</td>
+	<td><code>price ^ 2</code></td>
+	<td align="right"><code>25</code></td>
+	<td>Raises a number to the power of another number</td>
+</tr>
+<tr>
+	<td>Modulo</td>
+	<td><code>price mod 2</code></td>
+	<td align="right"><code>1</code></td>
+	<td>Divides one number by another and returns the remainder</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comparing-numbers">Comparing Numbers<a class="headerlink" href="#comparing-numbers" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>In addition to the above, there are also six operators for comparing numbers:</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Example</th>
+	<th align="right">Result</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Greater than</td>
+	<td><code>price &gt;  5</code></td>
+	<td align="right"><code>false</code></td>
+	<td>Returns <code>true</code> if the first number is <strong>greater than</strong> the second</td>
+</tr>
+<tr>
+	<td>Greater than or equal</td>
+	<td><code>price &gt;= 5</code></td>
+	<td align="right"><code>true</code></td>
+	<td>Returns <code>true</code> if the first number is <strong>greater than or equal</strong> to the second</td>
+</tr>
+<tr>
+	<td>Less than</td>
+	<td><code>4 &lt;  price</code></td>
+	<td align="right"><code>true</code></td>
+	<td>Returns <code>true</code> if the first number is <strong>less than</strong> the second</td>
+</tr>
+<tr>
+	<td>Less than or equal</td>
+	<td><code>4 &lt;= price</code></td>
+	<td align="right"><code>true</code></td>
+	<td>Returns <code>true</code> if the first number is <strong>less than or equal</strong> to the second</td>
+</tr>
+<tr>
+	<td>Equal to</td>
+	<td><code>price = 5</code></td>
+	<td align="right"><code>true</code></td>
+	<td>Returns <code>true</code> if one number is <strong>equal</strong> to another</td>
+</tr>
+<tr>
+	<td>Not Equal to</td>
+	<td><code>price &lt;&gt; 19</code></td>
+	<td align="right"><code>true</code></td>
+	<td>Returns <code>true</code> if one number is <strong>not equal</strong> to another</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="#round">round(digits)</a></td>
+	<td>Rounds a number to the nearest integer or to the specified number of fractional digits</td>
+</tr>
+<tr>
+	<td><a href="#floor">floor</a></td>
+	<td>Gets the largest integer less than or equal to the specified number</td>
+</tr>
+<tr>
+	<td><a href="#ceiling">ceiling</a></td>
+	<td>Gets the smallest integer greater than or equal to the specified number</td>
+</tr>
+<tr>
+	<td><a href="#truncate">truncate</a></td>
+	<td>Calculates the integral part of a number</td>
+</tr>
+<tr>
+	<td><a href="#atLeast">atLeast(min)</a></td>
+	<td>Gets a number that is greater than or equal to the specified threshold.</td>
+</tr>
+<tr>
+	<td><a href="#atMost">atMost(max)</a></td>
+	<td>Gets a number that is less than or equal to the specified threshold.</td>
+</tr>
+<tr>
+	<td><a href="#toText">toText(format)</a></td>
+	<td>Converts a number to <a href="text.htm"><code>Text</code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>For additional mathematical functions check out the <a href="math.htm"><code>Math</code></a> type.</p>
+</div><h2 id="round">round(digits)<a class="headerlink" href="#round" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Rounds a number to the specified number of fractional digits, away from zero.<br />
+If no parameter is used, or the number of digits is zero, rounds to the nearest integer.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example (with <code>price</code> = 4.445)</th>
+	<th align="right">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>price.round()</code></td>
+	<td align="right"><code>4</code></td>
+</tr>
+<tr>
+	<td><code>price.round(1)</code></td>
+	<td align="right"><code>4.4</code></td>
+</tr>
+<tr>
+	<td><code>price.round(2)</code></td>
+	<td align="right"><code>4.45</code></td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p><strong>Tip:</strong> if you specify a <strong>negative</strong> number of digits, its positive inverse will be used, i.e. <code>round(-2)</code> is the same as <code>round(2)</code></p>
+</div><h2 id="floor">floor<a class="headerlink" href="#floor" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns the largest integer that is less than or equal to the specified number.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th align="right">Example</th>
+	<th align="right">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="right"><code>1.1.floor()</code></td>
+	<td align="right"><code>1</code></td>
+</tr>
+<tr>
+	<td align="right"><code>1.5.floor()</code></td>
+	<td align="right"><code>1</code></td>
+</tr>
+<tr>
+	<td align="right"><code>1.9.floor()</code></td>
+	<td align="right"><code>1</code></td>
+</tr>
+<tr>
+	<td align="right"><code>1.floor()</code></td>
+	<td align="right"><code>1</code></td>
+</tr>
+<tr>
+	<td align="right"><code>(-1.1).floor()</code></td>
+	<td align="right"><code>-2</code></td>
+</tr>
+<tr>
+	<td align="right"><code>(-1.9).floor()</code></td>
+	<td align="right"><code>-2</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ceiling">ceiling<a class="headerlink" href="#ceiling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns the smallest integer that is greater than or equal to the specified number.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th align="right">Example</th>
+	<th align="right">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="right"><code>1.1.ceiling()</code></td>
+	<td align="right"><code>2</code></td>
+</tr>
+<tr>
+	<td align="right"><code>1.5.ceiling()</code></td>
+	<td align="right"><code>2</code></td>
+</tr>
+<tr>
+	<td align="right"><code>1.9.ceiling()</code></td>
+	<td align="right"><code>2</code></td>
+</tr>
+<tr>
+	<td align="right"><code>1.ceiling()</code></td>
+	<td align="right"><code>1</code></td>
+</tr>
+<tr>
+	<td align="right"><code>(-1.1).ceiling()</code></td>
+	<td align="right"><code>-1</code></td>
+</tr>
+<tr>
+	<td align="right"><code>(-1.9).ceiling()</code></td>
+	<td align="right"><code>-1</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="truncate">truncate<a class="headerlink" href="#truncate" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Calculates the integral part of a number by rounding it to the nearest integer towards zero.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th align="right">Example</th>
+	<th align="right">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="right"><code>1.1.truncate()</code></td>
+	<td align="right"><code>1</code></td>
+</tr>
+<tr>
+	<td align="right"><code>1.5.truncate()</code></td>
+	<td align="right"><code>1</code></td>
+</tr>
+<tr>
+	<td align="right"><code>1.9.truncate()</code></td>
+	<td align="right"><code>1</code></td>
+</tr>
+<tr>
+	<td align="right"><code>1.truncate()</code></td>
+	<td align="right"><code>1</code></td>
+</tr>
+<tr>
+	<td align="right"><code>(-1.1).truncate()</code></td>
+	<td align="right"><code>-1</code></td>
+</tr>
+<tr>
+	<td align="right"><code>(-1.9).truncate()</code></td>
+	<td align="right"><code>-1</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="atLeast">atLeast(min)<a class="headerlink" href="#atLeast" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Compares a number to a specified <code>threshold</code> and returns it if it is <strong>greater</strong> than or equal to the <code>threshold</code>, otherwise returns the <code>threshold</code>.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th align="right">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>5.atLeast(10)</code></td>
+	<td align="right"><code>10</code></td>
+</tr>
+<tr>
+	<td><code>5.atLeast(3)</code></td>
+	<td align="right"><code>5</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="atMost">atMost(max)<a class="headerlink" href="#atMost" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Compares a number to a specified <code>threshold</code> and returns it if it is <strong>less</strong> than or equal to the <code>threshold</code>, otherwise returns the <code>threshold</code>.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th align="right">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>5.atMost(10)</code></td>
+	<td align="right"><code>5</code></td>
+</tr>
+<tr>
+	<td><code>5.atMost(3)</code></td>
+	<td align="right"><code>3</code></td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p><strong>Tip:</strong> <code>atLeast</code> and <code>atMost</code> are great for quickly validating user inputs.</p>
+<ul>
+<li>For example, <code>Amount.atLeast(1)</code> would always return a number that is greater than or equal to <code>1</code>, even if the <code>Amount</code> were zero or negative.</li>
+<li>When combined, they make it easy to ensure that a value is within a certain range: <code>Amount.atLeast(1).atMost(99)</code> would always return a number between <code>1</code> and <code>99</code>.</li>
+</ul>
+</div><h2 id="toText">toText(format)<a class="headerlink" href="#toText" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Converts a number to <a href="text.htm"><code>Text</code></a>.<br />
+You can customize the conversion with the <a href="#toTextFormat"><code>Format</code></a> parameter.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example (with <code>price</code> = 4.445)</th>
+	<th align="right">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>price.toText()</code></td>
+	<td align="right"><code>&quot;4.445&quot;</code></td>
+</tr>
+<tr>
+	<td><code>price.toText(&quot;€ 0.##&quot;)</code></td>
+	<td align="right"><code>&quot;€ 4.45&quot;</code></td>
+</tr>
+<tr>
+	<td><code>1337.toText(&quot;$ 0,0.00&quot;)</code></td>
+	<td align="right"><code>&quot;$ 1,337.00&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="toTextFormat">Format<a class="headerlink" href="#toTextFormat" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>You may use a combination of the following characters to customize the conversion of numbers to <a href="text.htm"><code>Text</code></a>.  </p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>For an in-depth explanation of these settings you can take a look at the <a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings" target="_blank">MSDN documentation</a> of the underlying functionality.<br />
+<strong>Please keep in mind</strong> that the code samples shown there will <strong>not work</strong> in Hive, but the format strings will!</p>
+</div><p><code>0</code> – <strong>zero placeholder</strong><br />
+Replaces the zero with the corresponding digit if one is present; otherwise, zero appears in the result text.<br />
+<code>123.456.toText(&quot;0000&quot;)</code> becomes <code>0123</code><br />
+<code>123.toText(&quot;000.00&quot;)</code> becomes <code>123.00</code></p>
+<p><code>#</code> – <strong>digit placeholder</strong><br />
+Replaces the hash sign with the corresponding digit if one is present; otherwise, no digit appears in the result text.<br />
+<code>123.456.toText(&quot;####&quot;)</code> becomes <code>123</code><br />
+<code>123.toText(&quot;###.##&quot;)</code> becomes <code>123</code>  </p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>A zero that is not a significant digit will never be displayed, even if zero is the only digit in the text.<br />
+For example, <code>1.05.toText(&quot;#.##&quot;)</code> becomes <code>1.05</code> but <code>1.0.toText(&quot;#.##&quot;)</code> becomes <code>1</code> and <code>0.toText(&quot;#.##&quot;)</code> results in empty text.</p>
+</div><p><code>.</code> – <strong>decimal placeholder</strong><br />
+Determines the location of the decimal separator in the result text.<br />
+<code>0.1234.toText(&quot;0.00&quot;)</code> becomes <code>0.12</code></p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Any additional periods after the first in the format text will be ignored.</p>
+</div><p><code>,</code> – <strong>group separator placeholder</strong><br />
+Inserts a localized group separator between each number group in the <em>integral</em> part of the output.<br />
+<code>12345678.toText(&quot;##,#&quot;)</code> becomes <code>12,345,678</code></p>
+<p><code>%</code> – <strong>percentage placeholder</strong><br />
+Multiplies a number by 100 and inserts a percentage symbol in the result text.<br />
+<code>0.35.toText(&quot;0%&quot;)</code> becomes <code>35%</code></p>
+<p><code>;</code> – <strong>section separator</strong><br />
+Defines sections with separate format strings for positive, negative and zero numbers.<br />
+<code>(-13.37).toText(&quot;##.##;(##.##)&quot;)</code> becomes <code>(13.37)</code> </p>
+<h4 id="other-characters">Other characters<a class="headerlink" href="#other-characters" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>All characters that have not been mentioned above will simply be copied to the result text:<br />
+<code>24.toText(&quot;0 degrees&quot;)</code> becomes <code>24 degrees</code></p>
+<p>In order to use placeholder characters literally, you can precede them with a <strong>backslash <code>\</code></strong>:<br />
+<code>13.37.toText(&quot;\# 00.0&quot;)</code> becomes <code># 13.4</code></p>
+<p>You can also use <strong>single quotes <code>'</code></strong> or <strong>double quotes <code>&quot;</code></strong> to enclose literal text that should be copied to the result:<br />
+<code>13.37.toText(&quot;00.0'% of total'&quot;)</code> becomes <code>13.4% of total</code></p>
+<h4 id="rounding">Rounding<a class="headerlink" href="#rounding" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<p>If the formatted value contains more significant digits than are present in the format text, the value will be rounded to the nearest digit and away from zero.<br />
+<code>10.5.toText(&quot;#&quot;)</code> becomes <code>11</code><br />
+<code>0.25.toText(&quot;0.0&quot;)</code> becomes <code>0.3</code></p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

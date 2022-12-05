@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hash - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hive/index.htm">Hive</a></span></li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveLanguage.htm">Language</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveTypes.htm">Types</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveComponents.htm">Components</a></span>
+</li>
+<li class="tocentry"><a href="../hive/configurator.htm">Your Configurator</a>
+</li>
+<li class="tocentry"><a href="../hive/configuration.htm">Current Configuration</a>
+</li>
+<li class="tocentry"><a href="../hive/math.htm">Math</a>
+</li>
+<li class="tocentry"><a href="../hive/qrcode.htm">QRCode</a>
+</li>
+<li class="tocentry current"><a class="current" href="../hive/hash.htm">Hash</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#usage">Usage</a></li>
+
+<li class="tocentry"><a href="#computeSha256">computeSha256(value, isBase64Encoded)</a></li>
+
+<li class="tocentry"><a href="#computeHmacSha256">computeHmacSha256(value, secret, isBase64Encoded)</a></li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../hive/result-visualization.htm">Result Visualization</a>
+</li>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../hive/index.htm">Hive</a></li> / <li><a href="../hive/hash.htm">Hash</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="hash">Hash<a class="headerlink" href="#hash" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>The <code>Hash</code> type provides functions for generating hash codes with various hashing algorithms.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>To use any of the functions described on this page, you must prefix them with the <code>Hash</code> type name:</p>
+<pre><code class="hive">Hash.computeSha256(&quot;some value&quot;)
+</code></pre>
+
+<p>And if you already named something else &quot;Hash&quot;, you need an additional prefix:</p>
+<pre><code class="hive">HiveTypes.Hash.computeSha256(&quot;some value&quot;)
+</code></pre>
+
+<h2 id="computeSha256">computeSha256(value, isBase64Encoded)<a class="headerlink" href="#computeSha256" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Generates the <a href="https://en.wikipedia.org/wiki/SHA-2" target="_blank">SHA256 hash</a> of the given text (first parameter). 
+The second parameter defines in which format the generated hash will be returned.</p>
+<p>If it is true (which is the default value) the hash will be returned base64 encoded.</p>
+<p>If it is false the hash will be returned hex (base16) encoded.</p>
+<pre><code class="hive">Hash.computeSha256(&quot;&quot;)                  // 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+Hash.computeSha256(&quot;some value&quot;)        // qz0H8xacy9DtbEtF3iFRn5+TjHLSQSSZiquUnOg7tRs=
+Hash.computeSha256(&quot;&quot;, false)           // e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Hash.computeSha256(&quot;some value&quot;, false) // ab3d07f3169ccbd0ed6c4b45de21519f9f938c72d24124998aab949ce83bb51b
+</code></pre>
+
+<h2 id="computeHmacSha256">computeHmacSha256(value, secret, isBase64Encoded)<a class="headerlink" href="#computeHmacSha256" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Generates the <a href="https://en.wikipedia.org/wiki/HMAC" target="_blank">HMAC SHA256 hash</a> of the given text (first parameter) with the given.
+The second parameter is the secret text which is used to generate the hash.</p>
+<p>The third parameter defines in which format the generated hash will be returned.</p>
+<p>If it is true (which is the default value) the hash will be returned base64 encoded.</p>
+<p>If it is false the hash will be returned hex (base16) encoded.</p>
+<pre><code class="hive">Hash.computeHmacSha256(&quot;&quot;, &quot;&quot;)                             // thNnmggU2ex3L5XXeMNfxf8Wl8STcVZTxscSFEKSxa0=
+Hash.computeHmacSha256(&quot;some value&quot;, &quot;some secret&quot;)        // gcOIOIoay4FP/bY7cDX/3xf8JheKkEwUWmL1cyVTdLg=
+Hash.computeHmacSha256(&quot;&quot;, &quot;some secret&quot;, false)           // f6ea2d6efc05da393de3fa47d17eda28ae5e25197501e889e4d995f8e53ea8f6
+Hash.computeHmacSha256(&quot;some value&quot;, &quot;some secret&quot;, false) // 81c388388a1acb814ffdb63b7035ffdf17fc26178a904c145a62f573255374b8
+</code></pre>
+
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

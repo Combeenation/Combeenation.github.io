@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS custom properties (CSS variables) - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../../favicon-16x161.png">
+    <link rel="stylesheet" href="../../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../../DesignEditor.htm">Design Editor</a></span></li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../Controls.htm">Controls</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../../CustomCSS.htm">Custom CSS</a></span></li>
+<li class="tocentry current"><a class="current" href="../../design-editor/custom-css/css-custom-properties.htm">CSS custom properties (CSS variables)</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#organizational-tip">Organizational tip</a></li>
+
+<li class="tocentry"><a href="#changing-variable-values-at-runtime">Changing variable values at runtime</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#example">Example</a></li>
+
+
+</ul>
+</li>
+
+<li class="tocentry"><a href="#support-for-legacy-browsers-ie-11-etc.">Support for legacy browsers (IE 11 etc.)</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#limitation-example">Limitation example</a></li>
+
+
+</ul>
+</li>
+
+
+
+</ul>
+
+</ul>
+</li>
+<li class="tocentry"><a href="../../design-editor/mail-share.htm">Mail share</a>
+</li>
+<li class="tocentry"><a href="../../design-editor/social-share.htm">Social share</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry"><a href="../../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../../index.htm">Getting Started</a></li> / <li><a href="../../DesignEditor.htm">Design Editor</a></li> / <li><a href="../../CustomCSS.htm">Custom CSS</a></li> / <li><a href="../../design-editor/custom-css/css-custom-properties.htm">CSS custom properties (CSS variables)</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="css-custom-properties-css-variables">CSS custom properties (CSS Variables)<a class="headerlink" href="#css-custom-properties-css-variables" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>All browsers which are <a href="../../configurator/supported-browsers.htm">officially supported</a> by Combeenation also support <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*" target="_blank">CSS custom properties</a>. Therefore you can basically use them as you wish in your custom CSS.</p>
+<p>See <a href="https://caniuse.com/#feat=css-variables" target="_blank">Can I use</a> for more details on browser support.</p>
+<h2 id="organizational-tip">Organizational tip<a class="headerlink" href="#organizational-tip" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>It is recommended to declare all CSS variables in a dedicated custom CSS module named <code>Variables</code> or something the like instead of spreading them all over different modules. This helps you keep an overview of all available variables.</p>
+<h2 id="changing-variable-values-at-runtime">Changing variable values at runtime<a class="headerlink" href="#changing-variable-values-at-runtime" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The values of CSS variables declared in custom CSS can be changed dynamically at runtime using the following SigSlo:</p>
+<pre><code class="JS">CssVars.ValueChanged -&gt; Configurator.updateCssVariables(CssVars.Value)
+</code></pre>
+
+<p>The value which is given to the <code>updateCssVariables</code> slot needs to be the value of a record component with column names representing the names of the CSS variable without the leading <code>--</code>.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>If you want to change CSS variable values dynamically via SigSlo you have to use names which are also allowed in Hive. E.g. you couldn't use names like <code>label-text-color</code> but would have to stick to <code>labelTextColor</code> etc.</p>
+</div><h3 id="example">Example<a class="headerlink" href="#example" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Configurator <code>CssVariables</code> in company <code>Combeenation College</code>:<br />
+<a href="https://portal.combeenation.com/Cfgr/College/CSSVARIABLES" target="_blank">Published demo</a></p>
+<pre><code class="CSS">/* Custom CSS */
+:root {
+    --cfgrBckgrColor: #DD0060;
+    --labelTextColor: yellow;
+    --labelBckgrColor: #37A58C;
+}
+
+.cfgr-parent {
+    background: var(--cfgrBckgrColor) !important;
+}
+
+.cfgr-label {
+    color: var(--labelTextColor);
+    background: var(--labelBckgrColor);
+}
+</code></pre>
+
+<pre><code class="Hive">/* Record component &quot;CssVars&quot; */
+{
+    { Theme=Text, cfgrBckgrColor=Text, labelTextColor=Text, labelBckgrColor=Text }
+    { &quot;Colorful&quot;, &quot;#DD0060&quot;,           &quot;yellow&quot;,            &quot;#37A58C&quot; }
+    { &quot;Light&quot;,    &quot;white&quot;,             &quot;white&quot;,             &quot;rgba(0, 0, 0, 0.6)&quot; }
+    { &quot;Dark&quot;,     &quot;black&quot;,             &quot;black&quot;,             &quot;rgba(255, 255, 255, 0.6)&quot; }
+}
+</code></pre>
+
+<h2 id="support-for-legacy-browsers-ie-11-etc.">Support for legacy browsers (IE 11 etc.)<a class="headerlink" href="#support-for-legacy-browsers-ie-11-etc." title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>If you have to support older browsers like IE 11 you can still use CSS variables since Combeenation comes with a <a href="https://jhildenbiddle.github.io/css-vars-ponyfill/#/" target="_blank">css-vars-ponyfill</a> which provides support for them in legacy browsers.</p>
+<p>However, be aware that the ponyfill comes with <a href="https://jhildenbiddle.github.io/css-vars-ponyfill/#/?id=features" target="_blank">some limitations</a>, the most important one being that you can only declare CSS variables within a <code>:root</code> ruleset but not within other selectors.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>When using CSS variables in your custom CSS, you should always pay close attention to the correct behavior in different browsers but even more so if you have to support legacy browsers such as IE 11.</p>
+</div><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>Even though Edge 15 &amp; 16 basically support CSS variables, they come with some known issues. Therefore we're also using the ponyfill when on those browsers which means that the mentioned limitations apply to them as well. However, the market share of Edge 15 &amp; 16 is quite low and should therefore be negligible.</p>
+</div><h3 id="limitation-example">Limitation example<a class="headerlink" href="#limitation-example" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Whilst the following would work in modern browsers, legacy browsers won't apply the overwritten color but show all text in blue:</p>
+<pre><code class="CSS">:root {
+    /* Default text color */
+    --label-text-color: blue;
+}
+
+.RedTextPanel {
+    /* Overwrite default text color for everything within a &quot;.RedTextPanel&quot; */
+    --label-text-color: red;
+}
+
+.cfgr-label {
+    color: var(--label-text-color);
+}
+</code></pre>
+
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/modernizr-2.8.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

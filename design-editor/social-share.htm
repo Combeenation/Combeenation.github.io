@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Social share - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../DesignEditor.htm">Design Editor</a></span></li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Controls.htm">Controls</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../CustomCSS.htm">Custom CSS</a></span>
+</li>
+<li class="tocentry"><a href="../design-editor/mail-share.htm">Mail share</a>
+</li>
+<li class="tocentry current"><a class="current" href="../design-editor/social-share.htm">Social share</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#styling">Styling</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#small-design-changes">Small design changes</a></li>
+
+<li class="tocentry"><a href="#blank-button">Blank button</a></li>
+
+
+</ul>
+</li>
+
+<li class="tocentry"><a href="#share-options">Share options</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#known-behaviour">Known behaviour</a></li>
+
+
+</ul>
+</li>
+
+
+
+</ul>
+
+</ul>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../DesignEditor.htm">Design Editor</a></li> / <li><a href="../design-editor/social-share.htm">Social share</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="social-share-button">Social Share Button<a class="headerlink" href="#social-share-button" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>The Share-Control is essentially a button with a fixed click behaviour.
+Based on the chosen platform it changes it's default design and opens the respective 'Share window' when clicked.
+The share functionality is only available in published configurators.</p>
+<h2 id="styling">Styling<a class="headerlink" href="#styling" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p><img src="./../img/SocialShareButtons.png" width="454" height="45" /></p>
+<p>It's recommended to use the default styling to preserve it across all platforms and be safe for future updates.</p>
+<h3 id="small-design-changes">Small design changes<a class="headerlink" href="#small-design-changes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Some changes are specifically supported without the need to overrule the CSS:</p>
+<ul>
+<li>Text only: Set <code>Show icon</code> to false</li>
+<li>Icon only: Remove <code>Value</code></li>
+<li>Width/Height: The content stays centered and the icon resizes to some extent</li>
+</ul>
+<p>Also the whole hover effects can be disabled by simply removing the CSS class <code>default-hover</code>.</p>
+<h3 id="blank-button">Blank button<a class="headerlink" href="#blank-button" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>If a totally different design is required, a blank button can be aquired with the following steps:</p>
+<ul>
+<li><code>Value</code>: remove content</li>
+<li><code>Show icon</code>: set to false</li>
+<li><code>CSS Class</code>: remove class &quot;default-hover&quot;</li>
+</ul>
+<p>Afterwards it can be designed like any other button with background images, custom css-rules, etc.</p>
+<h2 id="share-options">Share options<a class="headerlink" href="#share-options" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>By default all the relevant values in the properties are provided as so called &quot;Open Graph Meta Tags&quot; or in short &quot;og-Tags&quot;. Most platforms process those tags but the result can differ between every platform.
+It's recommended to fill all properties with valid content to get the best result, even though some properties aren't visible to the user (like author).</p>
+<p><strong>Graphic</strong>: Name of a Graphic-Component<br>
+<strong>Embed Url</strong>: Base Url where the Configurator is embedded. The Share-Link will be appended automatically.</p>
+<h3 id="known-behaviour">Known behaviour<a class="headerlink" href="#known-behaviour" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>The behaviour highly depends on the implementation of the respective platform. This means that the following table may not be up to date or it gets changed from time to time.</p>
+<p>&#x2713; Part of the post/message (maybe shown a second time in the preview)<br>
+&#9675; Visible but not directly in the post/message (e.g. as part of the preview)<br>
+&#x2716; Not Visible</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th></th>
+	<th>Title</th>
+	<th>Description</th>
+	<th>Graphic/Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Facebook</td>
+	<td>&#9675;</td>
+	<td>&#9675;</td>
+	<td>&#x2713;</td>
+</tr>
+<tr>
+	<td>Pinterest</td>
+	<td>&#x2716;</td>
+	<td>&#x2713;</td>
+	<td>&#x2713;</td>
+</tr>
+<tr>
+	<td>Twitter</td>
+	<td>&#x2713;</td>
+	<td>&#x2713;</td>
+	<td>&#x2713; (may load with delay)</td>
+</tr>
+<tr>
+	<td>LinkedIn</td>
+	<td>&#9675;</td>
+	<td>&#x2716;</td>
+	<td>&#x2713;</td>
+</tr>
+<tr>
+	<td>WhatsApp</td>
+	<td>&#x2713;</td>
+	<td>&#x2713;</td>
+	<td>&#x2713; (may load with delay)</td>
+</tr>
+</tbody>
+</table>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

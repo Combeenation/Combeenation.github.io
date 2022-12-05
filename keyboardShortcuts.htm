@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keyboard Shortcuts - Combeenation Docs</title>
+    <link rel="shortcut icon" href="favicon-16x161.png">
+    <link rel="stylesheet" href="css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry current"><a class="current" href="keyboardShortcuts.htm">Keyboard Shortcuts</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#regex-search-or-replace">Regex search or replace</a></li>
+
+<li class="tocentry"><a href="#rectangle-selection">Rectangle selection</a></li>
+
+<li class="tocentry"><a href="#alt-j-selection">Alt-J selection</a></li>
+
+
+
+</ul>
+<li class="tocentry"><a href="userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="index.htm">Getting Started</a></li> / <li><a href="keyboardShortcuts.htm">Keyboard Shortcuts</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="global-hotkeys">Global hotkeys<a class="headerlink" href="#global-hotkeys" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Hotkey</th>
+	<th>Action</th>
+	<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>Ctrl</code><code>K</code></td>
+	<td>Quick launcher (backend)<br>Available actions depend on the current view</td>
+	<td>Fast way to:<br>- go to pages<br>- find and select components<br>- switch company</td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>O</code></td>
+	<td>Focus component filter box</td>
+	<td>Only in editor view</td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>Shift</code><code>L</code></td>
+	<td>Send current session log to the monitoring tool (backend &amp; configurator)</td>
+	<td>To reproduce or analyze possible bugs</td>
+</tr>
+</tbody>
+</table>
+<h1 id="code-editor">Code editor<a class="headerlink" href="#code-editor" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Hotkey</th>
+	<th>Action</th>
+	<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>Ctrl</code><code>Space</code></td>
+	<td>Autocomplete</td>
+	<td>Code completion for keywords and components</td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>B</code></td>
+	<td>Autoformat records</td>
+	<td>Formats all records in a table-like manner</td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>F</code></td>
+	<td>Search</td>
+	<td>Jump to the first occurence of the searched text.<br>To go through all occurences use <code>Ctrl</code><code>G</code><br>supports <a href="#regex-search-or-replace">regex</a></td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>G</code></td>
+	<td>Find next</td>
+	<td>Go to the next occurence of the active search.<br>If there is no active search a normal search is triggered beforehand</td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>Shift</code><code>G</code></td>
+	<td>Find previous</td>
+	<td>Go to the previous occurence of the active search</td>
+</tr>
+<tr>
+	<td><code>Alt</code><code>F</code></td>
+	<td>Persistent Search</td>
+	<td>Dialog doesn't autoclose, enter to find next, Shift-Enter to find previous<br>supports <a href="#regex-search-or-replace">regex</a></td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>Shift</code><code>H</code></td>
+	<td>Replace (first occurence)</td>
+	<td>After entering the search string, a second box appears to enter the replacement text.<br>supports <a href="#regex-search-or-replace">regex</a></td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>Shift</code><code>R</code></td>
+	<td>Replace all</td>
+	<td>After entering the search string, a second box appears to enter the replacement text<br>supports <a href="#regex-search-or-replace">regex</a></td>
+</tr>
+<tr>
+	<td><code>Alt</code><code>G</code></td>
+	<td>Jump to line</td>
+	<td>15 = line 15<br>15:30 = line 15, colum 30<br>50% = center line of whole editor</td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>D</code></td>
+	<td>Remove line</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>Shift</code><code>D</code></td>
+	<td>Duplicate line</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>Alt</code><code>J</code></td>
+	<td>Select next occurrence of word or selection</td>
+	<td>Creates multiple selections and allows editing all selections at once<br>See <a href="#alt-j-selection">example</a></td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>Alt</code><code>Up/Down</code></td>
+	<td>Select next line down/up. Create multiple cursors.</td>
+	<td></td>
+</tr>
+<tr>
+	<td><code>Ctrl</code><code>Mouse Left</code></td>
+	<td>Create multiple cursors</td>
+	<td>With every mouseclick another cursor gets added</td>
+</tr>
+<tr>
+	<td><code>Alt</code><code>Mouse Left Drag</code></td>
+	<td>Create &quot;rectangle selection&quot; for multiple cursors</td>
+	<td>See <a href="#rectangle-selection">example</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<h3 id="regex-search-or-replace">Regex search or replace<a class="headerlink" href="#regex-search-or-replace" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Text</th>
+	<th>Search text</th>
+	<th>Match</th>
+	<th>Replace text</th>
+	<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Hallo World!</td>
+	<td>/H[ae]llo/</td>
+	<td><code>Hallo</code> World</td>
+	<td>Hi</td>
+	<td>Hi World!</td>
+</tr>
+<tr>
+	<td>cAsE iNsensitIVE</td>
+	<td>/case/i</td>
+	<td><code>cAsE</code> iNsensitIVE</td>
+	<td>CASE</td>
+	<td>CASE iNsensitIVE</td>
+</tr>
+<tr>
+	<td>453.1282</td>
+	<td>/(\d+[.]\d{2})\d*/</td>
+	<td><code>(453.12)82</code></td>
+	<td>$1 kg</td>
+	<td>453.12 kg</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rectangle-selection">Rectangle selection<a class="headerlink" href="#rectangle-selection" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li>fast text replace or text insert that's vertically aligned</li>
+</ul>
+<p><img src="./img/keyboard_shortcuts/rectangle_selection.gif" width="444" height="346" /></p>
+<h3 id="alt-j-selection">Alt-J selection<a class="headerlink" href="#alt-j-selection" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li>change on multiple columns</li>
+<li>
+alternative for specific text replacements
+<ul>
+<li>example: column &quot;HexCode=Text&quot; should be left untouched, when replacing &quot;Hex&quot;</li>
+</ul>
+</li>
+</ul>
+<p><img src="./img/keyboard_shortcuts/alt_j_selection.gif" width="519" height="195" /></p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/modernizr-2.8.3.min.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script src="js/theme.js"></script>
+
+</body>
+</html>

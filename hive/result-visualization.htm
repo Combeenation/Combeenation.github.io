@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Result Visualization - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hive/index.htm">Hive</a></span></li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveLanguage.htm">Language</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveTypes.htm">Types</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveComponents.htm">Components</a></span>
+</li>
+<li class="tocentry"><a href="../hive/configurator.htm">Your Configurator</a>
+</li>
+<li class="tocentry"><a href="../hive/configuration.htm">Current Configuration</a>
+</li>
+<li class="tocentry"><a href="../hive/math.htm">Math</a>
+</li>
+<li class="tocentry"><a href="../hive/qrcode.htm">QRCode</a>
+</li>
+<li class="tocentry"><a href="../hive/hash.htm">Hash</a>
+</li>
+<li class="tocentry current"><a class="current" href="../hive/result-visualization.htm">Result Visualization</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#record-data">Record data</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#column-rendering">Column rendering</a></li>
+
+<li class="tocentry"><a href="#pan--navigate">Pan / Navigate</a></li>
+
+<li class="tocentry"><a href="#minimize--maximize-columns">Minimize / Maximize columns</a></li>
+
+<li class="tocentry"><a href="#collapse-all-columns-except-the-clicked-one">Collapse all columns except the clicked one</a></li>
+
+<li class="tocentry"><a href="#expand--collapse-nested-data">Expand / Collapse nested data</a></li>
+
+
+</ul>
+</li>
+
+<li class="tocentry"><a href="#json">JSON</a></li>
+
+<li class="tocentry"><a href="#buttons-bottom-toolbar">Buttons (bottom toolbar)</a></li>
+
+
+
+</ul>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../hive/index.htm">Hive</a></li> / <li><a href="../hive/result-visualization.htm">Result Visualization</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="result-visualization">Result Visualization<a class="headerlink" href="#result-visualization" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>The result panel automatically converts the output data in a human-readable format.</p>
+<p><img src="../img/result_visualization/example.png" width="760" height="609" /></p>
+<h2 id="record-data">Record data<a class="headerlink" href="#record-data" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li>Table which renders columns based on it's type</li>
+<li>Easy navigation</li>
+<li>Automatic paging for big data</li>
+<li>Several expand/collapse features</li>
+</ul>
+<h3 id="column-rendering">Column rendering<a class="headerlink" href="#column-rendering" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li><strong>Nested data</strong>: (Expandable) inner table</li>
+<li><strong>Logic</strong>: Displayed as checked/unchecked box</li>
+<li>
+<strong>Image</strong>: Directly loads the image url
+<ul>
+<li>If the overall size is too large for efficient loading, it will show only an icon</li>
+<li>Hover over the image for a larger preview</li>
+</ul>
+</li>
+</ul>
+<h3 id="pan--navigate">Pan / Navigate<a class="headerlink" href="#pan--navigate" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>The <code>right mouse button</code> can be used to <strong>pan inside larger tables</strong>.
+Holding the right mouse button will hide the cursor and you can move in any direction until it's released.</p>
+<h3 id="minimize--maximize-columns">Minimize / Maximize columns<a class="headerlink" href="#minimize--maximize-columns" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Every column can be minimized by moving over it's header and clicking the <code>-</code> icon.</p>
+<p><img src="../img/result_visualization/minimize_column.png" width="233" height="105" /></p>
+<h3 id="collapse-all-columns-except-the-clicked-one">Collapse all columns except the clicked one<a class="headerlink" href="#collapse-all-columns-except-the-clicked-one" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>It's possible to focus on one column by <strong>clicking on the header with any modifier key held down</strong> (ctrl, alt, shift).</p>
+<p>To reverse the action and expand all columns again, click on the focused column again with any modifier key.</p>
+<p><img src="../img/result_visualization/focus_column.png" width="674" height="134" /></p>
+<h3 id="expand--collapse-nested-data">Expand / Collapse nested data<a class="headerlink" href="#expand--collapse-nested-data" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>When a component contains nested data (e.g. record inside record-column) it's collapsed by default.
+The nested data can be expanded individually per row and nesting.</p>
+<p><img src="../img/result_visualization/nested_table.png" width="349" height="278" /></p>
+<h2 id="json">JSON<a class="headerlink" href="#json" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Plain text which is parseable as JSON gets automatically formatted.</p>
+<p><img src="../img/result_visualization/json.png" width="272" height="284" /></p>
+<h2 id="buttons-bottom-toolbar">Buttons (bottom toolbar)<a class="headerlink" href="#buttons-bottom-toolbar" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li><strong>Toggle raw data</strong>: In case the original data is needed (e.g. for using the result as component input elsewhere)</li>
+<li><strong>Expand / Collapse all</strong>: Expand or collapse all inner tables recursively</li>
+<li>
+<strong>Copy result</strong>: Copies the whole content into the clipboard
+<ul>
+<li>Only available when <code>raw data</code> is displayed</li>
+</ul>
+</li>
+</ul>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

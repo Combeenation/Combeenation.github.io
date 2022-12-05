@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Configurator control - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../../favicon-16x161.png">
+    <link rel="stylesheet" href="../../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../../DesignEditor.htm">Design Editor</a></span></li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../../Controls.htm">Controls</a></span></li>
+<li class="tocentry current"><a class="current" href="../../design-editor/controls/cfgr-ctrl.htm">Configurator control</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#sigslos">SigSlos</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#iframe-size-sigslos">IFrame size</a></li>
+
+<li class="tocentry"><a href="#loadmask-sigslos">Load mask</a></li>
+
+<li class="tocentry"><a href="#restartcfgn-sigslos">Restart configuration</a></li>
+
+<li class="tocentry"><a href="#redirect-parentpage-sigslo">Redirect parent page</a></li>
+
+
+</ul>
+</li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../../design-editor/controls/sd3d-ctrl.htm">ShapeDiver3d control</a>
+</li>
+<li class="tocentry"><a href="../../design-editor/controls/control-dom-css.htm">DOM & CSS classes</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../CustomCSS.htm">Custom CSS</a></span>
+</li>
+<li class="tocentry"><a href="../../design-editor/mail-share.htm">Mail share</a>
+</li>
+<li class="tocentry"><a href="../../design-editor/social-share.htm">Social share</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry"><a href="../../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../../index.htm">Getting Started</a></li> / <li><a href="../../DesignEditor.htm">Design Editor</a></li> / <li><a href="../../Controls.htm">Controls</a></li> / <li><a href="../../design-editor/controls/cfgr-ctrl.htm">Configurator control</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="configurator-control">Configurator control<a class="headerlink" href="#configurator-control" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>The <code>configurator</code> control has been added with <a href="./../../releases.htm#version-1.23.0">version 1.23.0</a>. It's a static control which exists by default in every configurator and cannot be deleted or renamed. It has no visual representation and mainly serves as a hub for <code>SigSlo</code>s which neither belong to a control, nor a component.</p>
+<h2 id="sigslos">SigSlos<a class="headerlink" href="#sigslos" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h3 id="iframe-size-sigslos">IFrame size<a class="headerlink" href="#iframe-size-sigslos" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>The size of the configurator itself can be observed with the <code>Size changed</code> signal and adjusted with the slots <code>Set IFrame width</code> &amp; <code>Set IFrame height</code>.</p>
+<p>E.g. you can create the following <code>SigSlo</code> to write the current width of the configurator into the <code>CfgrWidth</code> components <code>input</code> every time the configurators size changed:</p>
+<pre class="nocode">Configurator.SizeChanged -&gt; CfgrWidth.SetValue(Configurator.ConfiguratorWidth)
+</pre><div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The <code>Size changed</code> <code>SigSlo</code> also works in the design editor.
+Therefore one advantage of implementing different layouts based on the configurator size saved in a component like <code>CfgrWidth</code> &amp; <code>CfgrHeight</code> versus using CSS media queries is that the former allows easier testing and editing for different sizes live within the design editor.</p>
+</div><p>The <code>Set IFrame width</code> &amp; <code>Set IFrame height</code> slots allow you to set a dedicated width &amp; height for the IFrame on the <a href="./../../configurator/embedding.htm#how-does-the-embedding-work">parent page</a> in which the configurator is embedded. Those slots won't do anything if the configurator is opened &quot;full screen&quot; (not embedded in parent page).</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>We can't guarantee that the slots <code>Set IFrame width</code> &amp; <code>Set IFrame height</code> are working as expected under all circumstances. For example, the parent page could interfere by defining the IFrame's size using some very strong CSS rules etc.</p>
+</div><h3 id="loadmask-sigslos">Load mask<a class="headerlink" href="#loadmask-sigslos" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>You can show &amp; hide a system load mask with some text of your choice with the slots <code>Show load mask</code> &amp; <code>Hide load mask</code>.</p>
+<h3 id="restartcfgn-sigslos">Restart configuration<a class="headerlink" href="#restartcfgn-sigslos" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>The configurator control's <code>Restart configuration</code> slot can be used to restart a running configuration.</p>
+<p>The slot takes 2 paramters:</p>
+<ul>
+<li><code>Preset ID</code>: The preset ID from which the components <code>input</code> values should be copied from. If not given (an empty string), the preset of the currently open configuration is used.</li>
+<li><code>Copy configuration values</code>: True to copy all component <code>input</code> values to the newly created configuration. False to create a completely new configuration.</li>
+</ul>
+<p>Possible use cases for this slot:</p>
+<ul>
+<li>Start a new configuration after the checkout succeeded to allow the user to configure a second product.</li>
+<li>Reset configurator to start afresh.</li>
+</ul>
+<h3 id="redirect-parentpage-sigslo">Redirect parent page<a class="headerlink" href="#redirect-parentpage-sigslo" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Allows the configurator to change the URL of the parent page.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>Won't work if the configurators Combeenation plugin is not correctly loaded on the parent page.</p>
+</div>
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/modernizr-2.8.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>List - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hive/index.htm">Hive</a></span></li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveLanguage.htm">Language</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hiveTypes.htm">Types</a></span></li>
+<li class="tocentry"><a href="../hive/number.htm">Number</a>
+</li>
+<li class="tocentry"><a href="../hive/text.htm">Text</a>
+</li>
+<li class="tocentry"><a href="../hive/logic.htm">Logic</a>
+</li>
+<li class="tocentry current"><a class="current" href="../hive/list.htm">List</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#input">Input</a></li>
+
+<li class="tocentry"><a href="#functions">Functions</a></li>
+
+<li class="tocentry"><a href="#length">length</a></li>
+
+<li class="tocentry"><a href="#get">get(index)</a></li>
+
+<li class="tocentry"><a href="#contains">contains(item)</a></li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../hive/map.htm">Map</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveComponents.htm">Components</a></span>
+</li>
+<li class="tocentry"><a href="../hive/configurator.htm">Your Configurator</a>
+</li>
+<li class="tocentry"><a href="../hive/configuration.htm">Current Configuration</a>
+</li>
+<li class="tocentry"><a href="../hive/math.htm">Math</a>
+</li>
+<li class="tocentry"><a href="../hive/qrcode.htm">QRCode</a>
+</li>
+<li class="tocentry"><a href="../hive/hash.htm">Hash</a>
+</li>
+<li class="tocentry"><a href="../hive/result-visualization.htm">Result Visualization</a>
+</li>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../hive/index.htm">Hive</a></li> / <li><a href="../hiveTypes.htm">Types</a></li> / <li><a href="../hive/list.htm">List</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="list">List<a class="headerlink" href="#list" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>A list contains multiple values of the same type. </p>
+<p>To create a list you just have to wrap a number of values in square brackets:</p>
+<pre><code class="hive">// a list of numbers
+[ 1, 2, 3 ]
+
+// a list of Text
+[ &quot;red&quot;, &quot;green&quot;, &quot;blue&quot; ]
+</code></pre>
+
+<p>You can declare lists in any of your rules. If you want to use the same list in various places, you can for example put it in a <a href="valueComponent.htm">ValueComponent</a>.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The items of a list are ordered and can be accessed by their index / position in the list.<br />
+The first item has the index 1.  </p>
+</div><h2 id="input">Input<a class="headerlink" href="#input" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>A list can also be used as <code>Input</code> for a rule. It works the same for them as for any other value:</p>
+<pre><code class="hive">// if Input contains a list, that list is used
+// otherwise, the list [1,2,3] is used
+Input or [ 1, 2, 3 ]
+</code></pre>
+
+<p>Input lists can be modified with Signals &amp; Slots in various ways: you can add, remove or change items or replace the entire list.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p><strong>Important:</strong> Signals &amp; Slots can only modify an Input list, not a list declared in a rule. You should therefore always provide a default Input list. An empty list <code>[]</code> is also permitted as <code>Input</code>.</p>
+<p>In the above example, if <code>Input</code> were <code>Empty</code>, the list <code>[1,2,3]</code> will be used – but none of the Signals &amp; Slots can modify it! </p>
+</div><h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="#length">length</a></td>
+	<td>Gets the number of items in the list</td>
+</tr>
+<tr>
+	<td><a href="#get">get(index)</a></td>
+	<td>Gets the item at the specified index</td>
+</tr>
+<tr>
+	<td><a href="#contains">contains(item)</a></td>
+	<td>Returns <code>true</code> if a list contains the specified item</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="length">length<a class="headerlink" href="#length" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns the number of items in the list.</p>
+<pre><code class="hive">[ 1, 2, 3 ].length()  // returns 3
+</code></pre>
+
+<h2 id="get">get(index)<a class="headerlink" href="#get" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns the item at the specified index.</p>
+<pre><code class="hive">[ 1, 2, 3 ].Get(0)   // returns 1, same as Get(1)
+[ 1, 2, 3 ].Get(2)   // returns 2
+[ 1, 2, 3 ].Get(-1)  // returns 3
+
+[ 1, 2, 3 ].Get(99)  // returns 3
+[ 1, 2, 3 ].Get(-9)  // returns 1
+</code></pre>
+
+<p>Any numerical index returns a list item, based on these rules:</p>
+<ul>
+<li>The first item has index 1, but 0 also returns it.</li>
+<li>When the index is negative, items are counted from right to left.</li>
+<li>When the index is greater than the number of items in the list, it is automatically capped.</li>
+<li>If the list contains no items, zero is returned. Check the <a href="#length">length</a> of the list to explicitly handle this case.</li>
+</ul>
+<h2 id="contains">contains(item)<a class="headerlink" href="#contains" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns <code>true</code> if a list contains the specified item.</p>
+<pre><code class="hive">[ &quot;red&quot;, &quot;green&quot;, &quot;blue&quot; ].contains(&quot;red&quot;)   // returns true
+[ &quot;red&quot;, &quot;green&quot;, &quot;blue&quot; ].contains(&quot;Blue&quot;)  // returns false!
+</code></pre>
+
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>When looking for items, <code>contains</code> uses the default equality operator as defined by the type of items in the list. </p>
+<p>In the above example, the list contains <code>Text</code> items and by default Texts are compared in <a href="text.htm#comparing-text">a case-sensitive fashion</a>. That is why &quot;Blue&quot; cannot be found, but &quot;blue&quot; can.</p>
+</div>
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

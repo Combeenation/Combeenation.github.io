@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User input sanitization - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../Configurator.htm">Configurator</a></span></li>
+<li class="tocentry"><a href="../configurator/general.htm">General</a>
+</li>
+<li class="tocentry"><a href="../configurator/configuration.htm">Configuration</a>
+</li>
+<li class="tocentry"><a href="../configurator/embedding.htm">Embedding</a>
+</li>
+<li class="tocentry"><a href="../configurator/checkout.htm">Checkout</a>
+</li>
+<li class="tocentry"><a href="../configurator/checkout-types.htm">Checkout types</a>
+</li>
+<li class="tocentry current"><a class="current" href="../configurator/user-input-sanitization.htm">User input sanitization</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#sigslo-parameter-">SigSlo parameter <code>Sanitize Value</code></a></li>
+
+<li class="tocentry"><a href="#imaginary-xss-attack-scenario">Imaginary XSS attack scenario</a></li>
+
+<li class="tocentry"><a href="#mixed-content">Mixed content</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#example">Example</a></li>
+
+
+</ul>
+</li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../configurator/supported-browsers.htm">Supported browsers</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../Configurator.htm">Configurator</a></li> / <li><a href="../configurator/user-input-sanitization.htm">User input sanitization</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="user-input-sanitization">User input sanitization<a class="headerlink" href="#user-input-sanitization" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<div class="alert alert-tip"><span class="alert-title"><i class="fa fa-info-circle"></i> Tip</span><p><strong>Rule of thumb:</strong> Always leave the SigSlo parameter <a href="#sigslo-parameter-">Sanitize Value</a> at its default value <code>true</code> or use <a href="#mixed-content">Hives encodeHtml()</a> when displaying user text input in the configurator!</p>
+</div><h2 id="sigslo-parameter-">SigSlo parameter <code>Sanitize Value</code><a class="headerlink" href="#sigslo-parameter-" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>To prevent <a href="https://owasp.org/www-community/attacks/xss/" target="_blank">Cross-Site Scripting (XSS) attacks</a> we've introduced a new paramter <code>Sanitize Value</code> for a wide range of <code>SigSlo</code> slots like <code>Button.setValue</code>, <code>Label.setValue</code>, <code>DataView.setEntries</code> etc.</p>
+<p>This parameter comes with a default value of <code>true</code> which ensures that HTML code which is given to the slot is not rendered as such but only shown as raw text.</p>
+<h2 id="imaginary-xss-attack-scenario">Imaginary XSS attack scenario<a class="headerlink" href="#imaginary-xss-attack-scenario" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<ul>
+<li>Imagine a configurator where the user can enter some text which is then shown in a label.<br />
+  E.g. a custom name for his configuration.</li>
+<li>
+This configuration name is saved to a component <code>CfgnName</code> via the following <code>SigSlos</code>:  
+
+<ol>
+<li><code>CfgnNameTxtbox.ValueChanged -&gt; CfgnName.setValue(CfgnNameTxtBox.Value)</code></li>
+<li><code>CfgnName.ValueChanged -&gt; CfgnNameLbl.setValue(CfgnName.Value, false)</code><br />
+<strong>Note</strong> that the second parameter <code>Sanitize Value</code> is <code>false</code> here!</li>
+</ol>
+</li>
+<li>A user can now enter HTML in the <code>CfgnNameTxtbox</code> which is saved in the <code>CfgnName</code> component and in turn rendered to the <code>CfgnNameLbl</code> via its <code>setValue</code> slot. This HTML code can potentially include JavaScript that is executed on rendering.</li>
+<li>
+An evil user could do the following:
+<ul>
+<li>Create a new configuration in the published &amp; embedded configurator.</li>
+<li>Enter some HTML in the <code>CfgnNameTxtbox</code> which renders an unsuspiciously looking name but also executes some JavaScript. The JavaScript could add a dialog to the configurator that asks users for credit card information before checkout and sends it to the evil user.</li>
+<li>This HTML is saved in the <code>CfgnName</code> component by the <code>SigSlos</code> shown above.</li>
+<li>The evil user can now send a copy link to this configuration to anyone, promising a fake discount of 80% to anyone who buys a product via this link.</li>
+<li>Everyone who performs checkout via this copy link is presented with the malicious credit card dialog and unknowingly sends his credit card information to the evil user...</li>
+</ul>
+</li>
+</ul>
+<h2 id="mixed-content">Mixed content<a class="headerlink" href="#mixed-content" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>If you have to write HTML in Hive which includes text from user input AND shall be rendered as HTML you can use Hives <a href="../hive/text.htm#encodeHtml">encodeHtml</a> method to sanitize the user input.</p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Imagine that the configuration name from the imaginary attack scenario above shall be shown in a &quot;configuration overview&quot; label whose content contains complex HTML to allow some fancy styling via custom CSS:</p>
+<pre><code class="Hive">/* Component &quot;CfgnOverview&quot; */
+&quot;&quot;&quot;
+&lt;div class=&quot;CfgnOverview&quot;&gt;
+  &lt;div class=&quot;CfgnOverview__name&quot;&gt;{=CfgnName}&lt;/div&gt;
+  &lt;div class=&quot;CfgnOverview__text&quot;&gt;{=CfgnOverviewText}&lt;/div&gt;
+  &lt;div class=&quot;CfgnOverview__price&quot;&gt;{=CfgnPrice.toText(&quot;€ 0.00&quot;)}&lt;/div&gt;
+&lt;/div&gt;
+&quot;&quot;&quot;
+</code></pre>
+
+<pre><code class="JS">/* SigSlos */
+CfgnOverview.ValueChanged -&gt; CfgnOverviewLabel.setValue(CfgnOverview.Value, false)
+</code></pre>
+
+<p>You can't set the <code>Sanitize Value</code> parameter to <code>true</code> here since that would destroy the beautiful HTML rendering that you actually require here, which leads to this code being open to <a href="https://owasp.org/www-community/attacks/xss/" target="_blank">XSS attacks</a>.</p>
+<p><strong>Solution:</strong> Encode the user input via Hives <a href="../hive/text.htm#encodeHtml">encodeHtml</a> method when embedding it in the HTML code:</p>
+<pre><code class="Hive">/* Component &quot;CfgnOverview&quot; */
+&quot;&quot;&quot;
+&lt;div class=&quot;CfgnOverview&quot;&gt;
+  &lt;div class=&quot;CfgnOverview__name&quot;&gt;{=CfgnName.encodeHtml()}&lt;/div&gt;
+  &lt;div class=&quot;CfgnOverview__text&quot;&gt;{=CfgnOverviewText}&lt;/div&gt;
+  &lt;div class=&quot;CfgnOverview__price&quot;&gt;{=CfgnPrice.toText(&quot;€ 0.00&quot;)}&lt;/div&gt;
+&lt;/div&gt;
+&quot;&quot;&quot;
+</code></pre>
+
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

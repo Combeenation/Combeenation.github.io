@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RecordComponent - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hive/index.htm">Hive</a></span></li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveLanguage.htm">Language</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveTypes.htm">Types</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hiveComponents.htm">Components</a></span></li>
+<li class="tocentry"><a href="../hive/graphicComponent.htm">GraphicComponent</a>
+</li>
+<li class="tocentry current"><a class="current" href="../hive/recordComponent.htm">RecordComponent</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#properties">Properties</a></li>
+
+<li class="tocentry"><a href="#records">Records</a></li>
+
+<li class="tocentry"><a href="#selectedKey">SelectedKey</a></li>
+
+<li class="tocentry"><a href="#value">Value</a></li>
+
+<li class="tocentry"><a href="#table">The Table Type</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#functions">Functions</a></li>
+
+<li class="tocentry"><a href="#get">get(key)</a></li>
+
+<li class="tocentry"><a href="#getFirst">getFirst</a></li>
+
+<li class="tocentry"><a href="#add">add(table)</a></li>
+
+
+</ul>
+</li>
+
+
+
+</ul>
+
+</ul>
+</li>
+<li class="tocentry"><a href="../hive/configurator.htm">Your Configurator</a>
+</li>
+<li class="tocentry"><a href="../hive/configuration.htm">Current Configuration</a>
+</li>
+<li class="tocentry"><a href="../hive/math.htm">Math</a>
+</li>
+<li class="tocentry"><a href="../hive/qrcode.htm">QRCode</a>
+</li>
+<li class="tocentry"><a href="../hive/hash.htm">Hash</a>
+</li>
+<li class="tocentry"><a href="../hive/result-visualization.htm">Result Visualization</a>
+</li>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../hive/index.htm">Hive</a></li> / <li><a href="../hiveComponents.htm">Components</a></li> / <li><a href="../hive/recordComponent.htm">RecordComponent</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="recordcomponent">RecordComponent<a class="headerlink" href="#recordcomponent" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>The <code>RecordComponent</code> contains a table of records from which one can be chosen as its value.</p>
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="#records">Records</a></td>
+	<td>The table of records</td>
+</tr>
+<tr>
+	<td><a href="#selectedKey">SelectedKey</a></td>
+	<td>The key of the record to choose as Value</td>
+</tr>
+<tr>
+	<td><a href="#value">Value</a></td>
+	<td>Contains the selected record</td>
+</tr>
+</tbody>
+</table>
+<h2 id="records">Records<a class="headerlink" href="#records" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The table of records, from which one can be chosen as the <a href="#value">Value</a>.</p>
+<p>A <a href="#table">table</a> looks like this:</p>
+<pre><code class="hive">{
+  { Key=Number, Name=Text, Price=Number }
+  {          1,  &quot;Apples&quot;, 10           }
+  {          2, &quot;Oranges&quot;, 20           }
+  {          3, &quot;Bananas&quot;, 30           }
+}
+</code></pre>
+
+<p>The first row of this table determines which columns it has, all subsequent rows contain values for these columns. A column definition must always consist of a name (like &quot;Key&quot; or &quot;Price&quot;) and a type (like &quot;Number&quot; or &quot;Text&quot;). </p>
+<p><strong>Note</strong> that the first column in a table is special: it is used to look up a record with the <a href="#get"><code>Get</code></a> function. While generally referred to as the &quot;Key&quot; column, you can give it any name you want.<br />
+Because it is used to look up records, it must not contain a value that can change over time. In fact, you can only use literal values in a &quot;Key&quot; column, such as Numbers or Text. If you try to use a different value, you will get an error.</p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>The examples below assume that there is a <code>RecordComponent</code> with the name &quot;fruits&quot; that looks like this one. You can copy the above snippet to try out the examples in your own rules.</p>
+</div><p>To access the Records of a <code>RecordComponent</code> in a different component, you need to use the Escape Operator:</p>
+<pre><code class="hive">// Note the # at the beginning of the next line
+// Without it, you can't access the 'Records' property
+#fruits.Records.GetFirst()
+
+// Without the #, 'fruits' refers to the selected record
+// You can access the columns of the selected record directly
+fruits.Price
+</code></pre>
+
+<h2 id="selectedKey">SelectedKey<a class="headerlink" href="#selectedKey" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The key of the record that should be selected as the <a href="#value">Value</a>. It is always of the same type as the <code>Key</code> column.</p>
+<p>In many cases, you will want to use a rule like the following:</p>
+<pre><code class="hive">Input or 1   // assuming Key is of type Number
+</code></pre>
+
+<p>You can connect controls like the DataView to a <code>RecordComponent</code>, which will automatically write the Key of a selected item to the <code>SelectedKey</code> property.</p>
+<p><strong>Note</strong> that by itself, the <code>SelectedKey</code> property has no effect on which record will be chosen – it's not even necessary to use it at all in some situations. In order for it to have an effect, you need to use it in the <a href="#value">Value</a> rule, which we will look at next.</p>
+<h2 id="value">Value<a class="headerlink" href="#value" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Contains the selected record. </p>
+<p>The default rule for this property looks like the following:</p>
+<pre><code class="hive">Records.Get(SelectedKey) or Records.GetFirst()
+</code></pre>
+
+<p>This rule does two things: it first uses the <a href="#get"><code>Get</code></a> function to look up the record that has the same Key as the <code>SelectedKey</code>. If no such record can be found, it uses the <a href="#getFirst"><code>GetFirst</code></a> function to return the first record from the <code>Records</code> property.</p>
+<h2 id="table">The Table Type<a class="headerlink" href="#table" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The value produced by the <a href="#records"><code>Records</code></a> property is called a <code>Table</code>.</p>
+<h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="#get">get(key)</a></td>
+	<td>Gets the record with the specified key</td>
+</tr>
+<tr>
+	<td><a href="#getFirst">getFirst</a></td>
+	<td>Gets the first record of the table</td>
+</tr>
+<tr>
+	<td><a href="#add">add(table)</a></td>
+	<td>Combines two tables</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get">get(key)<a class="headerlink" href="#get" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Returns the record with the specified key, or <code>Empty</code> if none of the records has that key.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>#fruits.Records.get(1)</code></td>
+	<td><code>[ 1,&quot;Apples&quot;, 10]</code></td>
+</tr>
+<tr>
+	<td><code>#fruits.Records.get(3)</code></td>
+	<td><code>[ 3,&quot;Bananas&quot;,30]</code></td>
+</tr>
+<tr>
+	<td><code>#fruits.Records.get(9)</code></td>
+	<td><code>Empty</code></td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p><strong>Tip:</strong> use the <a href="#getFirst"><code>getFirst()</code></a> function to provide a fallback record if none was found by <code>Get</code>:</p>
+<pre><code class="hive">#fruits.Records.get(9) or #fruits.Records.getFirst() 
+</code></pre>
+
+</div><h3 id="getFirst">getFirst<a class="headerlink" href="#getFirst" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Returns the first record of a table, or <code>Empty</code> if there are no records.</p>
+<pre><code class="hive">#fruits.Records.getFirst()  // returns [ 1,&quot;Apples&quot;, 10]
+</code></pre>
+
+<h3 id="add">add(table)<a class="headerlink" href="#add" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Combines two tables to return a new one that contains all records from both tables.</p>
+<pre><code class="hive">#fruits.Records.add(#vegetables.Records)
+</code></pre>
+
+<p>A few things to keep in mind when using <code>add</code>:</p>
+<ul>
+<li>Both tables must be of the same type, which means they must have the same columns</li>
+<li>If both tables contain a record with the same <code>Key</code>, only the first one will be taken. The &quot;first&quot; record is that of the table on which you call the <code>add</code> function – in the example above, that would be <code>#fruits.Records</code>.</li>
+</ul>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GraphicComponent - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hive/index.htm">Hive</a></span></li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveLanguage.htm">Language</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveTypes.htm">Types</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hiveComponents.htm">Components</a></span></li>
+<li class="tocentry current"><a class="current" href="../hive/graphicComponent.htm">GraphicComponent</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#properties">Properties</a></li>
+
+<li class="tocentry"><a href="#functions">Functions</a></li>
+
+<li class="tocentry"><a href="#widthHeight">Width and Height</a></li>
+
+<li class="tocentry"><a href="#archive">Archive</a></li>
+
+<li class="tocentry"><a href="#value">Value</a></li>
+
+<li class="tocentry"><a href="#visuals">Visuals and DynamicVisuals</a></li>
+
+<li class="tocentry"><a href="#getUrl">getUrl</a></li>
+
+<li class="tocentry"><a href="#graphicArchive">The GraphicArchive Type</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#none">None</a></li>
+
+<li class="tocentry"><a href="#svg">Svg</a></li>
+
+<li class="tocentry"><a href="#pngwidth-height">Png(width, height)</a></li>
+
+<li class="tocentry"><a href="#jpgwidth-height-quality">Jpg(width, height, quality)</a></li>
+
+<li class="tocentry"><a href="#properties-1">Properties</a></li>
+
+<li class="tocentry"><a href="#gaType">Type</a></li>
+
+
+</ul>
+</li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../hive/recordComponent.htm">RecordComponent</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry"><a href="../hive/configurator.htm">Your Configurator</a>
+</li>
+<li class="tocentry"><a href="../hive/configuration.htm">Current Configuration</a>
+</li>
+<li class="tocentry"><a href="../hive/math.htm">Math</a>
+</li>
+<li class="tocentry"><a href="../hive/qrcode.htm">QRCode</a>
+</li>
+<li class="tocentry"><a href="../hive/hash.htm">Hash</a>
+</li>
+<li class="tocentry"><a href="../hive/result-visualization.htm">Result Visualization</a>
+</li>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../hive/index.htm">Hive</a></li> / <li><a href="../hiveComponents.htm">Components</a></li> / <li><a href="../hive/graphicComponent.htm">GraphicComponent</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="graphiccomponent">GraphicComponent<a class="headerlink" href="#graphiccomponent" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>The <code>GraphicComponent</code> allows you to create dynamic visualizations in the Scalable Vector Graphics (SVG) format and export them as JPG or PNG images.</p>
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="#widthHeight">Width</a></td>
+	<td>The width of your graphic</td>
+</tr>
+<tr>
+	<td><a href="#widthHeight">Height</a></td>
+	<td>The height of your graphic</td>
+</tr>
+<tr>
+	<td><a href="#archive">Archive</a></td>
+	<td>Controls if and how the graphic will be exported</td>
+</tr>
+<tr>
+	<td><a href="#value">Value</a></td>
+	<td>Gets the generated SVG of the graphic</td>
+</tr>
+<tr>
+	<td><a href="#visuals">Visuals</a></td>
+	<td>A <a href="map.htm">map</a> of the component's ComposedVisuals</td>
+</tr>
+<tr>
+	<td><a href="#visuals">DynamicVisuals</a></td>
+	<td>A <a href="map.htm">map</a> of the component's DynamicVisuals</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="#getUrl">getUrl</a></td>
+	<td>Gets the URL to which the graphic will be saved</td>
+</tr>
+</tbody>
+</table>
+<h2 id="widthHeight">Width and Height<a class="headerlink" href="#widthHeight" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Defines the width and height of your graphic. You can give it a fixed size or make it dependent on a rule or even an Input.</p>
+<h2 id="archive">Archive<a class="headerlink" href="#archive" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Determines whether the graphic should be be saved to a file and which format and other settings to use.</p>
+<p>To accomplish this you must provide a <a href="#graphicArchive">GraphicArchive</a> value, for example:</p>
+<pre><code class="hive">GraphicArchive.Svg  // save the graphic as SVG file
+</code></pre>
+
+<p>This will save the graphic as an SVG image. The name of the <code>GraphicComponent</code> will be used as file name.<br />
+You can use the <a href="#getUrl"><code>getUrl</code></a> function to obtain the URL of the saved image.</p>
+<h2 id="value">Value<a class="headerlink" href="#value" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns the raw SVG generated by the <code>GraphicComponent</code>. </p>
+<p>It is not recommended to modify the raw SVG directly, but if you have to hand it to an external system (like a shopping cart) you can convert it to Text with the <code>toText()</code> function to be able to put it in a XML or JSON document:</p>
+<pre><code class="hive">// obtain the SVG of the DefaultView component in Text form
+DefaultView.Value.toText()
+</code></pre>
+
+<h2 id="visuals">Visuals and DynamicVisuals<a class="headerlink" href="#visuals" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>These two properties are <a href="map.htm">maps</a> that contain all the <code>ComposedVisuals</code> resp. <code>DynamicVisuals</code> of the <code>GraphicComponent</code>. </p>
+<p>You can use them for example to obtain a visual by name (see the <a href="map.htm">map</a> documentation for further details):</p>
+<pre><code class="hive">// get the visual with the name &quot;myVisual&quot;, or Empty if it doesn't exist
+Defaultview.Visuals.Get(&quot;myVisual&quot;)
+</code></pre>
+
+<h2 id="getUrl">getUrl<a class="headerlink" href="#getUrl" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Gets the URL to which the graphic will be saved. </p>
+<p>If the <a href="#archive">Archive</a> property is set to <code>GraphicArchive.None</code>, no image will be generated and <code>getUrl</code> will return an empty Text <code>&quot;&quot;</code>.</p>
+<p>Otherwise, it will return the URL of the generated image.</p>
+<h2 id="graphicArchive">The GraphicArchive Type<a class="headerlink" href="#graphicArchive" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>To use the <a href="#archive">Archive</a> property of a <code>GraphicComponent</code> you must provide a <code>GraphicArchive</code> value. This section introduces you to the various archive settings that are currently available.</p>
+<h3 id="none">None<a class="headerlink" href="#none" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>No image will be generated and saved. It is recommended to use this setting when you don't need an exported image to reduce resource consumption.</p>
+<pre><code class="hive">// no image will be saved
+GraphicArchive.None
+</code></pre>
+
+<h3 id="svg">Svg<a class="headerlink" href="#svg" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>An SVG image will be saved. </p>
+<p>If the SVG format works for your use case, you should consider using this option. Pure SVG images can be enlarged without loss of quality and generating them is also faster in Combeenation.</p>
+<pre><code class="hive">// saves an SVG image
+GraphicArchive.Svg
+</code></pre>
+
+<h3 id="pngwidth-height">Png(width, height)<a class="headerlink" href="#pngwidth-height" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>A PNG image with the specified width and height will be saved.</p>
+<p>If you can't use SVG and need transparency in your image, you should  use this option.</p>
+<pre><code class="hive">// saves a 400 pixel wide and 400 pixel high PNG image
+GraphicArchive.Png(400, 400)
+</code></pre>
+
+<h3 id="jpgwidth-height-quality">Jpg(width, height, quality)<a class="headerlink" href="#jpgwidth-height-quality" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>A JPG image with the specified width, height and quality will be saved.</p>
+<p>The quality setting accepts a number between 1 and 100. The higher it is, the better your image will look – but it will also take up more space and thus take longer to load. The width and height also play a role in the image's size and appearance (images that must be enlarged may look blurry).</p>
+<pre><code class="hive">// saves a 600 pixel wide and 300 pixel high JPG image at 60% quality
+GraphicArchive.Jpg(600, 300, 60)
+</code></pre>
+
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p><strong>The larger a JPG or PNG image is</strong>, the longer it will take to generate.</p>
+<p>Larger images also take longer to download or send and take up more space. You should make your image just large enough to be suitable for your use case.</p>
+<p>For JPG images, the quality also affects the file size.</p>
+</div><h3 id="properties-1">Properties<a class="headerlink" href="#properties-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>When you create a <code>GraphicArchive</code> in any of the ways shown above or work with the <code>Archive</code> property of a <code>GraphicComponent</code>, you can access its properties:</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="#gaType">Type</a></td>
+	<td>Gets the type of the <code>GraphicArchive</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gaType">Type<a class="headerlink" href="#gaType" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Gets the type of the <code>GraphicArchive</code>. You can use this information for example to figure out which kind of GraphicArchive is being used by a <code>GraphicComponent</code>:</p>
+<pre><code class="hive">if DefaultView.Archive.Type = GraphicArchiveType.PNG then 
+  // do something when a PNG image is used
+</code></pre>
+
+<p>You must compare this value with a <code>GraphicArchiveType</code>, which has the properties <code>None</code>, <code>Svg</code>, <code>Png</code> and <code>Jpg</code> as you would expect.</p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

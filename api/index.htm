@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>API - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry current"><a class="current" href="../api/index.htm">API</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#endpoint">Endpoint</a></li>
+
+<li class="tocentry"><a href="#authentication">Authentication</a></li>
+
+<li class="tocentry"><a href="#api-v1">API v1</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#general">General</a></li>
+
+<li class="tocentry"><a href="#configurations">Configurations</a></li>
+
+<li class="tocentry"><a href="#finishes">Finishes</a></li>
+
+
+</ul>
+</li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../api/index.htm">API</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="combeenation-api">Combeenation API<a class="headerlink" href="#combeenation-api" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>The Combeenation API is an interface which can be called programmatically with any possible HTTP REST client.</p>
+<h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The endpoint for the <a href="#api-v1">API v1</a> is <code>https://api.combeenation.com/v1</code>.</p>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Authenticate each request by setting the <code>Authorization</code> header with a valid API token. Create and manage your API tokens in the company settings. You can have up to two API tokens.</p>
+<p>We accept just the API token itself:</p>
+<pre class="nocode">&quot;Authorization&quot;: &quot;5bNPyHJWpF3PVT0bMho_kOOuPx0RD47pkPjRSsB8uauE6nrie+8eNZhggdwozjzKVqRy4k3xEvQAOHDHAZAoqc==&quot;
+</pre><p>or the API token in the Bearer format:</p>
+<pre class="nocode">&quot;Authorization&quot;: &quot;Bearer 5bNPyHJWpF3PVT0bMho_kOOuPx0RD47pkPjRSsB8uauE6nrie+8eNZhggdwozjzKVqRy4k3xEvQAOHDHAZAoqc==&quot;
+</pre><div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>Make sure to store your API keys somewhere secure and never share them publicly.</p>
+</div><h2 id="api-v1">API v1<a class="headerlink" href="#api-v1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>For the full URL just concatenate the <a href="#endpoint">endpoint URL</a> with the action you want to execute (e.g. <code>https://api.combeenation.com/v1/version</code>).</p>
+<h3 id="general">General<a class="headerlink" href="#general" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><strong><code>[GET]</code></strong> <code>/version</code> ... returns information about the API endpoint</p>
+<h3 id="configurations">Configurations<a class="headerlink" href="#configurations" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><strong><code>[POST]</code></strong> <code>/configurations/{id}/copy</code> ... copy the configuration with the given <code>{id}</code></p>
+<h3 id="finishes">Finishes<a class="headerlink" href="#finishes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p><strong><code>[POST]</code></strong> <code>/finishes/{id}/copy</code> ... copy the finish with the given <code>{id}</code></p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

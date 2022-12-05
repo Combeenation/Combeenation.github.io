@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout types - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../Configurator.htm">Configurator</a></span></li>
+<li class="tocentry"><a href="../configurator/general.htm">General</a>
+</li>
+<li class="tocentry"><a href="../configurator/configuration.htm">Configuration</a>
+</li>
+<li class="tocentry"><a href="../configurator/embedding.htm">Embedding</a>
+</li>
+<li class="tocentry"><a href="../configurator/checkout.htm">Checkout</a>
+</li>
+<li class="tocentry current"><a class="current" href="../configurator/checkout-types.htm">Checkout types</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#diy-checkout">Do it yourself (DIY)</a></li>
+
+<li class="tocentry"><a href="#mail">Mail</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#limits">Limits</a></li>
+
+
+</ul>
+</li>
+
+<li class="tocentry"><a href="#rest">REST</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#limitsrestrictions">Limits\Restrictions</a></li>
+
+
+</ul>
+</li>
+
+<li class="tocentry"><a href="#ftp">FTP</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#limits-1">Limits</a></li>
+
+
+</ul>
+</li>
+
+<li class="tocentry"><a href="#woocommerce-v3.5">WooCommerce (v3.5)</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#hive-properties">Hive properties</a></li>
+
+<li class="tocentry"><a href="#woocommerce-plugin">WooCommerce plugin</a></li>
+
+
+</ul>
+</li>
+
+<li class="tocentry"><a href="#shopware-v5.5.6">Shopware (v5.5.6)</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#hive-properties-1">Hive properties</a></li>
+
+<li class="tocentry"><a href="#shopware-plugin">Shopware plugin</a></li>
+
+
+</ul>
+</li>
+
+<li class="tocentry"><a href="#shopify">Shopify</a></li>
+
+<li class="tocentry"><a href="#magento-v2.0">Magento (v2.0)</a></li>
+
+<li class="tocentry"><a href="#other-api-erp-...">Other (API, ERP, ...)</a></li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../configurator/user-input-sanitization.htm">User input sanitization</a>
+</li>
+<li class="tocentry"><a href="../configurator/supported-browsers.htm">Supported browsers</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../Configurator.htm">Configurator</a></li> / <li><a href="../configurator/checkout-types.htm">Checkout types</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="configurator-checkout">Checkout types<a class="headerlink" href="#configurator-checkout" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>This page focuses on the different Checkout types which Combeenation offers. For a general description of the checkout process please visit the <a href="checkout.htm">checkout docs page</a>.</p>
+<p>Overview of the different checkout types:</p>
+<h2 id="diy-checkout">Do it yourself (DIY)<a class="headerlink" href="#diy-checkout" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Basically the &quot;do it yourself&quot; (DIY) checkout lets you decide which data (e.g. amount, description, generated images, ...) will be passed to the parent page when a user clicks the &quot;Checkout&quot; button. The data will be defined within the property  <code>Parameter</code> in the DIY shop. Since it is just text, we recommend to use the JSON format for further processing.</p>
+<p>As already described in the <a href="embedding.htm#embed-code-detail">embedding page</a>, the configurator will communicate with the parent page via cross document messaging during the checkout. Technically speaking this all happens within your browser on the client side, so it is extremly fast.</p>
+<p>Finally you just have to implement the JavaScript function <code>window.Combeenation.onCheckout</code> on your parent page. This function will be called during the checkout and has one parameter which contains:</p>
+<ul>
+<li>configuration id</li>
+<li>configuration auth token</li>
+<li><code>CheckoutParameters</code> are the values you have defined previously</li>
+<li><code>CheckoutParametersHash</code> SHA256 hash of <code>CheckoutParameters</code> </li>
+<li>queryParameters which are set to the iframe url</li>
+</ul>
+<p>With this data on your hand you can implement your further checkout logic on your own (hence the name &quot;do it yourself&quot;). Example implementation of the checkout function:</p>
+<pre><code class="html">&lt;script type=&quot;application/javascript&quot;&gt;
+  window.Combeenation = (window.Combeenation || {});
+  window.Combeenation.onCheckout = function(data) {
+    /*
+    structure of the parameter 'data':
+    {
+      id, // id of the configuration (Provided by Combeenation)
+      authentication, // authentication token, which is needed if a customer wants to edit the configuration. (Provided by Combeenation)
+      checkoutParameters, // contains the value of the checkout component property 'Parameter' (Provided by you)
+      checkoutParametersHash, // SHA256 hash of `CheckoutParameters` (Provided by Combeenation)
+      queryParameters // contains all query parameters which are added to the iframe URL (Provided by the person who inserts the iframe in the page)
+    }
+    */
+
+    // e.g. make AJAX calls, redirects, ...
+  }
+&lt;/script&gt;
+</code></pre>
+
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>If you're put sensitive information (e.g. price) in the DIY checkout parameter, you have to verify on your server that the information hasn't been altered by a malicious users. Combeenation uses HMAC in order to ensure unforgeability.</p>
+</div><p>As already mentioned above the property <code>checkoutParametersHash</code> contains the SHA256 hash of the <code>checkoutParameters</code>. The hash will be salted with a secret which can be defined within the property  <code>HashSecret</code> in the DIY shop. This secret should be kept private and should only be stored on your server.</p>
+<p>With the <code>checkoutParameters</code> and the secret you can recalculate the hash and see if it matches the given <code>checkoutParametersHash</code>. If the hash differs the <code>checkoutParameters</code> have been altered.</p>
+<p>Example for checking the hash in PHP:</p>
+<pre><code class="php">$secret = &quot;myPrivateSecretWhichIsOnlyStoredOnTheServer&quot;;
+$data = $_POST[&quot;checkoutParameters&quot;];
+$givenHash = $_POST[&quot;checkoutParametersHash&quot;];
+
+// convert base64 hash
+$base64Hash = base64_encode(hash_hmac('sha256', $data, $secret, true));
+
+// check hash
+if($base64Hash == $givenHash) {
+  echo &quot;Add to cart successful&quot;;
+} else {
+  echo &quot;Hash invalid!&quot;;
+}
+</code></pre>
+
+<h2 id="mail">Mail<a class="headerlink" href="#mail" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>This checkout will send one or multiple mails on checkout. The mails are defined via a Hive record, with the following structure:</p>
+<pre><code class="hive">[{ 
+  From : { Name : &quot;John Doe&quot;, Mail : &quot;john.doe@example.com&quot; },
+  To  : [{ Name : &quot;Jane Doe&quot;, Mail : &quot;jane.doe@example.com&quot; }],
+  CC  : [{ Name : &quot;&quot;, Mail : &quot;&quot; }],
+  BCC : [{ Name : &quot;&quot;, Mail : &quot;&quot; }],
+  Subject : &quot;&quot;,
+  Message : &quot;&quot;,
+  Attachments : [{ FileName : &quot;&quot;, ContentEncoding : Encoding.Utf8, Content : &quot;&quot; }]
+}]
+</code></pre>
+
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>You can set a from address, but per default this will only be used as reply address and the real from address will be <code>mail.combeenation.com</code>. </p>
+<p>In order to use your company's domain as sending domain, we have to add your domain to our mail provider. This requires you to set some <a href="https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail" target="_blank">DKIM TXT entry</a> on your domain provider. Since this is currently not fully automated you should <a href="https://www.combeenation.com/ihr-konfigurator-projekt" target="_blank">contact us</a>, if you need your own sending domain.</p>
+</div><h3 id="limits">Limits<a class="headerlink" href="#limits" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li>Maximum size of all attachments combined is 5 MB</li>
+<li>Currently only text files are allowed as attachments (e.g. XML, CSV, JSON, ...).</li>
+</ul>
+<h2 id="rest">REST<a class="headerlink" href="#rest" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>This checkout will perform up to five parallel REST requests to given endpoints. The endpoint should return successful HTTP code (200-299). Requests are defined via a Hive record, with the following structure:</p>
+<pre><code class="hive">[{
+  Method : &quot;&quot;,
+  Url : &quot;&quot;,
+  Content : &quot;&quot;,
+  ContentEncoding : Encoding.Utf8,
+  AuthIntegration : &quot;&quot;,
+  Headers : [
+    { Key : &quot;Content-Type&quot;, Value : &quot;&quot; }
+  ]
+}]
+</code></pre>
+
+<h3 id="limitsrestrictions">Limits\Restrictions<a class="headerlink" href="#limitsrestrictions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li>Maximum size for all requests (content + headers) is 10 MB</li>
+<li>Maximum of 5 requests</li>
+<li>Supported HTTP methods: <code>POST</code>, <code>GET</code>, <code>PUT</code>, <code>DELETE</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>TRACE</code></li>
+<li>Pending requests will be cancelled after 60 seconds</li>
+<li>If an exception occurred or the response code was 408 (<code>RequestTimeout</code>), 500 (<code>InternalServerError</code>), 502 (<code>BadGateway</code>), 503 (<code>ServiceUnavailable</code>) or 504 (<code>GatewayTimeout</code>) the call will be retried up to three times.</li>
+<li>For <code>GET</code> and <code>HEAD</code> calls, the content will be omitted</li>
+<li>Currently only text files are allowed as request body (e.g. XML, CSV, JSON, form data, ...).</li>
+</ul>
+<h2 id="ftp">FTP<a class="headerlink" href="#ftp" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>This checkout will upload files to a given FTP server. The uploading files are defined via a Hive record, with the following structure:</p>
+<pre><code class="hive">[{
+  FilePath : &quot;&quot;,
+  ContentEncoding : Encoding.Utf8,
+  Content : &quot;&quot;
+}]
+</code></pre>
+
+<h3 id="limits-1">Limits<a class="headerlink" href="#limits-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li>Maximum size of all attachments combined is 100 MB.</li>
+<li>Currently only text files are allowed as files (e.g. XML, CSV, JSON, ...).</li>
+</ul>
+<h2 id="woocommerce-v3.5">WooCommerce (v3.5)<a class="headerlink" href="#woocommerce-v3.5" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>This plugin will add the product with the given custom fields to a WooCommerce cart. The WordPress plugin &quot;Combeenation Configurator for WooCommerce&quot; plugin must be installed and configured in order to work. </p>
+<h3 id="hive-properties">Hive properties<a class="headerlink" href="#hive-properties" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li><code>ProductId</code> ... The numeric id of the product in WooCommerce (aka the post id). Can be found by hovering over the product.</li>
+<li><code>Title</code>, <code>ImageUrl</code>, <code>Price</code> ... Those properties replace the corresponding original properties of the product.</li>
+<li><code>Amount</code> ... The amount of items which will be added to the cart.</li>
+<li><code>CustomFields</code> ... Custom data can be added to a product. Each entry has a <code>Label</code> and a <code>Value</code> (both text) and a property <code>Visible</code>. This property indicates if this custom data will be shown to the end user (cart, email, ...) or not. In the backend (orders view) all custom data entry can be viewed.</li>
+</ul>
+<p>If the configurator is embedded on a product page, the product id can be retrieved with the following Hive code <code>configuration.getParameter(&quot;wcProductId&quot;)</code> if needed.</p>
+<h3 id="woocommerce-plugin">WooCommerce plugin<a class="headerlink" href="#woocommerce-plugin" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Please contact a Combeenation administrator if you want to install the plugin. We are working on making the plugin available via the plugin store (see <a href="https://de.wordpress.org/plugins" target="_blank">https://de.wordpress.org/plugins</a>).</p>
+<p>Global settings can be found under <code>Settings</code> -&gt; <code>Combeenation settings</code>, those values act as default value for each configurator. Those global settings can be overwritten on product level.
+The flag <code>Is Configurator</code> must be ticked if the configurator should be shown for this product.
+If the configurator should be embedded on a different page than the product page use the following shortcode e.g. <code>[configurator id=&quot;48&quot;]</code>.</p>
+<h2 id="shopware-v5.5.6">Shopware (v5.5.6)<a class="headerlink" href="#shopware-v5.5.6" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>This plugin will add the product with the given custom fields to a Shopware cart. The WordPress plugin &quot;Combeenation Configurator&quot; plugin must be installed and configured in order to work.</p>
+<h3 id="hive-properties-1">Hive properties<a class="headerlink" href="#hive-properties-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<ul>
+<li><code>ProductId</code> ... The id of the product in Shopware (aka product number)</li>
+<li><code>Title</code>, <code>ImageUrl</code>, <code>PricePerUnit</code> ... Those properties replace the corresponding original properties of the product.</li>
+<li><code>Amount</code> ... The amount of items which will be added to the cart.</li>
+<li><code>CustomFields</code> ... Custom data can be added to a product. Each entry has a <code>Label</code> and a <code>Value</code> (both text) and a property <code>Visible</code>. This property indicates if this custom data will be shown to the end user (cart, email, ...) or not. In the backend (orders view) each custom data entry is visible. The value must be HTML encoded if they may contain invalid characters. This must be done because Shopware filters invalid characters (HTML/PHP-Tags, ...).</li>
+</ul>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>It really is important to encode those values if needed, because otherwise the SW plugin calculates the wrong hash and the product can't be added to the cart.
+As usual test the checkout process in order to avoid such bugs.</p>
+</div><p>If the configurator is embedded on a product page, the product id can be retrieved with the following Hive code <code>configuration.getParameter(&quot;ordernumber&quot;)</code> if needed.</p>
+<h3 id="shopware-plugin">Shopware plugin<a class="headerlink" href="#shopware-plugin" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>Please contact a Combeenation administrator if you want to install the plugin. We are working on making the plugin available via the plugin store (see <a href="https://store.shopware.com" target="_blank">https://store.shopware.com</a>).</p>
+<p>Settings can be found under <code>Configuration</code> -&gt; <code>Plugin manager</code> -&gt; <code>Installed</code>-&gt; <code>Combeenation</code> -&gt; <code>Configuration</code>. The <code>Company name</code>, <code>Configurator name</code>, <code>Configurator secret</code> have to be set otherwise the configurator won't be visible in the shop. The first two values identify your configurator (see Combeenation backend), the last value can be retrieved from the checkout component of your configurator.</p>
+<p>The flag <code>Configurator activ</code> must be ticked if the configurator should be shown for this product (the last setting in <code>Basic Info</code>).
+The iframe height/width will only be applied for configurators which are embedded on a product page. For the Shopping Worlds (aka &quot;Einkaufswelten&quot;) the height/width can be set by configuring the configurator element.</p>
+<p>To <strong>retrieve the custom data from an order</strong> select the order, go to tab <code>Positions</code> and click on the last button in the position row (<code>free text fields</code>).
+Orders can also be retrieved via API call, which also contain the custom data from Combeenation e.g. https://combeenation.shopware.at/api/orders/20007?useNumberAsId=true (where 20007 is the order number, the user must be marked as API user).</p>
+<p>Only gross prices should be passed to the Shopware plugin. Because the plugin calculates the net prices (seen in cart and email). The tax rate can be set via plugin settings.</p>
+<p>If the product is not available in the Shopware shop, make sure it has a price set and a category assigned.</p>
+<h2 id="shopify">Shopify<a class="headerlink" href="#shopify" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>We have a solution for adding a SKU to the cart. Price, image, description can't be overwritten, but custom information can be passed with the cart item.</p>
+<h2 id="magento-v2.0">Magento (v2.0)<a class="headerlink" href="#magento-v2.0" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>We've different approaches to add a product to a Magento cart, to find the proper solution for you, please <a href="https://www.combeenation.com/ihr-konfigurator-projekt" target="_blank">contact us</a>.</p>
+<h2 id="other-api-erp-...">Other (API, ERP, ...)<a class="headerlink" href="#other-api-erp-..." title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Combeenation also offers custom checkout solutions for your business case. So if you already have an API or want the configurator data to be passed into an ERP, we surely will find a solution that fits your needs. Just <a href="https://www.combeenation.com/ihr-konfigurator-projekt" target="_blank">contact us</a> and tell us about your case.</p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

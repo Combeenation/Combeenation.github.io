@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mail share - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../DesignEditor.htm">Design Editor</a></span></li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Controls.htm">Controls</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../CustomCSS.htm">Custom CSS</a></span>
+</li>
+<li class="tocentry current"><a class="current" href="../design-editor/mail-share.htm">Mail share</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#note">Note</a></li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../design-editor/social-share.htm">Social share</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../DesignEditor.htm">Design Editor</a></li> / <li><a href="../design-editor/mail-share.htm">Mail share</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="mail-share">Mail share<a class="headerlink" href="#mail-share" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>We've removed the &quot;built-in&quot; mail share option from the share button since it did not work reliably in all browsers.</p>
+<p>For now mails have to be sent via custom JS which can be accomplished with the following steps:</p>
+<ol>
+<li>Create a UI where the user can input the recipients mail address (e.g. layer with textbox etc.).</li>
+<li>Add a simple button which sends the mail. Paste the code below into the buttons <code>On click</code> property and adjust it to your needs (replace texts etc.).</li>
+</ol>
+<p>The code to send a mail looks something like this:</p>
+<pre><code class="js">const cfgnCtrlr = Cbn.app.getController('Cbn.Cfgr.controller.cfgn.Cfgn');
+if (cfgnCtrlr.getIsPreview()) {
+    Cbn.MessageBox.alert(
+        'Can\'t share configuration',
+        'You are viewing a preview of the configurator, which doesn\'t support sharing.'
+    );
+} else {
+    Cbn.utils.DomHelper.showLoadMask('Sending mail...');
+    Cbn.CfgnClient.shareCfgn('', '', '', '', '', function(shareData) {
+        const cfgrParent = cfgnCtrlr.getCfgrParent();
+        
+        // =============================================================================================
+        // === Adjust from, recipient, subject &amp; body here                                           ===
+        // =============================================================================================
+        const from      = { Name: 'Sender Name', Address: 'sender.name@mail.com' };
+        const recipient = cfgrParent.getCtrlById('recipientTextbox').getCtrlValue();
+        const subject   = 'My Pieno door';
+        let body        = 'This is my configuration: ' + shareData.shareUrl;
+        
+        if (shareData.imageUrl) {
+          body += '&lt;br /&gt;&lt;img src=&quot;' + shareData.imageUrl + '&quot;&gt;';
+        }
+    
+        Cbn.CfgnClient.sendMail(
+            subject,
+            body,
+            from,
+            [{ Name: recipient, Address: recipient }], // to
+            [], // cc
+            [], // bcc
+            [], // attachments
+            function() {
+                // =========================================================================================
+                // === This code runs after the mail has been sent successfully                          ===
+                // =========================================================================================
+                Cbn.utils.DomHelper.hideLoadMask();
+                Cbn.MessageBox.show({
+                    msg: 'Your configuration has been shared with &quot;' + recipient + '&quot;.',
+                    icon: Ext.Msg.INFO,
+                    header: false
+                });
+            }
+        );
+    });
+}
+</code></pre>
+
+<h2 id="note">Note<a class="headerlink" href="#note" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>There will be an easier way to share configurations via mail in the future...</p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

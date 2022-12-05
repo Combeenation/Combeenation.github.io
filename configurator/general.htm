@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>General - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../Configurator.htm">Configurator</a></span></li>
+<li class="tocentry current"><a class="current" href="../configurator/general.htm">General</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#presets">Presets</a></li>
+
+<li class="tocentry"><a href="#components-and-groups">Components and groups</a></li>
+
+<li class="tocentry"><a href="#signal--slots">Signal &amp; Slots</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#two-way-binding">Two Way Binding</a></li>
+
+
+</ul>
+</li>
+
+<li class="tocentry"><a href="#design-component">Design component</a></li>
+
+<li class="tocentry"><a href="#escape-operator">Escape Operator</a></li>
+<li class="tocentry">
+<ul class="currentrelative">
+<li class="tocentry"><a href="#more-properties-for-different-types-of-components">More properties for different types of components:</a></li>
+
+
+</ul>
+</li>
+
+
+
+<li class="tocentry"><a href="#record-component-1">Record Component</a></li>
+
+
+
+<li class="tocentry"><a href="#css-classes">CSS Classes</a></li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../configurator/configuration.htm">Configuration</a>
+</li>
+<li class="tocentry"><a href="../configurator/embedding.htm">Embedding</a>
+</li>
+<li class="tocentry"><a href="../configurator/checkout.htm">Checkout</a>
+</li>
+<li class="tocentry"><a href="../configurator/checkout-types.htm">Checkout types</a>
+</li>
+<li class="tocentry"><a href="../configurator/user-input-sanitization.htm">User input sanitization</a>
+</li>
+<li class="tocentry"><a href="../configurator/supported-browsers.htm">Supported browsers</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../Configurator.htm">Configurator</a></li> / <li><a href="../configurator/general.htm">General</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="general-information-about-the-configurator">General information about the Configurator<a class="headerlink" href="#general-information-about-the-configurator" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>This page should explain you the different parts of the configurator.</p>
+<h2 id="presets">Presets<a class="headerlink" href="#presets" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Presets are used to start the configurator with defined values.</p>
+<p>Example: 
+At the customers website are different points to open the configurator.
+At one point you have a grey and round window. At another point you have a green window with a milky glass inside. Each point has different start values, therefore you can create presets.</p>
+<h2 id="components-and-groups">Components and groups<a class="headerlink" href="#components-and-groups" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>At the left side of your configurator you will find a list of <code>components</code> and <code>groups</code>.  <br />
+Each <code>component</code> is part of a <code>group</code>.
+For a better overview in your configurator, split your <code>components</code> in useful <code>groups</code>.</p>
+<p>Always use meaningful and unique names for your <code>components</code> and their <code>groups</code>.</p>
+<p><img src="./../img/ComponentsGroups.png" width="249" height="350" /></p>
+<p>To add a <code>component</code>, use the <code>+</code> at the top.</p>
+<p>To add a <code>group</code> you first have to add a <code>component</code> and during this process you are able to add the <code>component</code> to a new <code>group</code>. </p>
+<p><img src="./../img/AddComponent.png" width="450" height="284" /></p>
+<h2 id="signal--slots">Signal &amp; Slots<a class="headerlink" href="#signal--slots" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Signals &amp; Slots are used to connect components and controls.  <br />
+“SigSlo” is the short form of it.   <br />
+To add <code>SigSlo's</code> you can use the button at the right top of the Design Page or you click on a control and open the <code>SigSlo</code> window from there.</p>
+<p>Example:</p>
+<p>If you click on a button, a value of a <code>component</code> should be changed.</p>
+<ul>
+<li><code>Signal</code>: click on the button</li>
+<li><code>Slot</code>: change the value</li>
+</ul>
+<h3 id="two-way-binding">Two Way Binding<a class="headerlink" href="#two-way-binding" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<p>If you create a <code>SigSlo</code> always think if there is a <code>SigSlo</code> in the other way back.
+If the value of the <code>component</code> can be change at any other point, has it any effect on the button?</p>
+<h2 id="design-component">Design component<a class="headerlink" href="#design-component" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Add the right side you find the elements of your <code>design component</code>, the properties and <code>SigSlo's</code>.
+For styling your <code>controls</code> try to use the <code>properties</code> in the list. It is easier to find it and understand it. If you have to set other <code>properties</code> you can give your control a CSS class and style it in the “CSS Style” Page. </p>
+<p>For elements which are used at more than one point and always styled the same way, you can use a CSS class is stead of always changing the same properties each time the element occurs.</p>
+<h2 id="escape-operator">Escape Operator<a class="headerlink" href="#escape-operator" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Each <code>component</code> has the following <code>properties</code>:</p>
+<ul>
+<li><code>group</code> </li>
+<li><code>name</code></li>
+</ul>
+<p>To access the value of this properties you use the <code>#</code> operator, the name of the <code>component</code> and the name of the <code>property</code>.</p>
+<p>Example:</p>
+<ul>
+<li>
+<code>#RecColor.Group</code>  
+
+<ul>
+<li>name of the group which contains the <code>record component “RecColor&quot;</code></li>
+<li>in this case &quot;Color&quot;</li>
+</ul>
+</li>
+<li>
+<code>#RecColor.Name</code> 
+<ul>
+<li>contains the name of the <code>component</code></li>
+<li>in this case &quot;RecColor&quot;</li>
+</ul>
+</li>
+</ul>
+<p><img src="./../img/RecComponent.png" alt="alt text" width="249" height="461" /></p>
+<h3 id="more-properties-for-different-types-of-components">More properties for different types of components:<a class="headerlink" href="#more-properties-for-different-types-of-components" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h3>
+<h4 id="record-component">Record Component<a class="headerlink" href="#record-component" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h4>
+<ul>
+<li>
+<p><code>#[NameoftheRecordComponent].Records</code>: contains the whole record table</p>
+<h5 id="tipp">Tipp<a class="headerlink" href="#tipp" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h5>
+<p>You have a product with a top color and a bottom color. Both have the same selection of colors. You fill the first <code>record component</code> with your color table. In the second <code>record component</code> you write  <code>#RecColor.Records</code> and you have the same color table. 
+If a new color is necessary, you only have to add it in the first <code>record component</code>. </p>
+</li>
+</ul>
+<p><strong>Specifically,</strong> to access any property of a RecordComponent, you have to use the Escape Operator. For example, to access the Records property you have to write <code>#myComponent.Records</code>. 
+On the plus side, <code>myComponent.Name</code> will now always refer to the &quot;Name&quot; column (if there is one), meaning you don't have to write <code>myComponent.Value.Name</code>.</p>
+<h1 id="style-guide">Style Guide<a class="headerlink" href="#style-guide" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<h2 id="record-component-1">Record Component<a class="headerlink" href="#record-component-1" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>For a better overview keep your table well structured. Use blanks instead of tabs. You will be happy about it, if you have to add a column later.</p>
+<h1 id="naming-guide">Naming Guide<a class="headerlink" href="#naming-guide" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<h2 id="css-classes">CSS Classes<a class="headerlink" href="#css-classes" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>First write the name of the container, add two underscore and the name of the element:  <br />
+OuterContainer__InnerElement</p>
+<p>Example:  <br />
+<code>InfoPanel__DownloadButton</code>   <br />
+<code>InfoPanel__HeaderLabel</code></p>
+<p>For more information ask Google about &quot;BEM - Block Element Modifier&quot;</p>
+<h1 id="formatted-text">Formatted Text<a class="headerlink" href="#formatted-text" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>Start and end your text with three instead of one quotation mark.
+So you don’t have to excape another quotation mark in the text or in the html-formating text. </p>
+<p>To include a value of another component in the text, you use <code>{= [NameOfTheComponent] }</code>    </p>
+<p>Example: <code>&quot;&quot;&quot; Das ist der Name der RecordComponent: „{=#RecTopTyp.Name}“!&quot;&quot;&quot;</code>   <br />
+Shown Result:  Das ist der Name der RecordComponent:&quot;RecTopTyp&quot;!</p>
+<p>Another Example - Style a text like a table: </p>
+<p><img src="./../img/FormattedTextExample.png" alt="alt text" width="983" height="373" /></p>
+<p>Shown Result:</p>
+<p><img src="./../img/FormattedTextResult.png" alt="alt text" width="381" height="56" /></p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

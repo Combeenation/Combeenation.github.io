@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Text - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hive/index.htm">Hive</a></span></li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveLanguage.htm">Language</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../hiveTypes.htm">Types</a></span></li>
+<li class="tocentry"><a href="../hive/number.htm">Number</a>
+</li>
+<li class="tocentry current"><a class="current" href="../hive/text.htm">Text</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#operations">Operations</a></li>
+
+<li class="tocentry"><a href="#comparing-text">Comparing Text</a></li>
+
+<li class="tocentry"><a href="#functions">Functions</a></li>
+
+<li class="tocentry"><a href="#length">length</a></li>
+
+<li class="tocentry"><a href="#contains">contains(text)</a></li>
+
+<li class="tocentry"><a href="#toUpper">toUpper</a></li>
+
+<li class="tocentry"><a href="#toLower">toLower</a></li>
+
+<li class="tocentry"><a href="#take">take(amount)</a></li>
+
+<li class="tocentry"><a href="#skip">skip(amount)</a></li>
+
+<li class="tocentry"><a href="#replace">replace(old,new)</a></li>
+
+<li class="tocentry"><a href="#encodeHtml">encodeHtml</a></li>
+
+<li class="tocentry"><a href="#decodeHtml">decodeHtml</a></li>
+
+<li class="tocentry"><a href="#encodeUrl">encodeUrl</a></li>
+
+<li class="tocentry"><a href="#decodeUrl">decodeUrl</a></li>
+
+<li class="tocentry"><a href="#toNumber">toNumber</a></li>
+
+<li class="tocentry"><a href="#toColor">toColor</a></li>
+
+<li class="tocentry"><a href="#isBase64">isBase64</a></li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../hive/logic.htm">Logic</a>
+</li>
+<li class="tocentry"><a href="../hive/list.htm">List</a>
+</li>
+<li class="tocentry"><a href="../hive/map.htm">Map</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hiveComponents.htm">Components</a></span>
+</li>
+<li class="tocentry"><a href="../hive/configurator.htm">Your Configurator</a>
+</li>
+<li class="tocentry"><a href="../hive/configuration.htm">Current Configuration</a>
+</li>
+<li class="tocentry"><a href="../hive/math.htm">Math</a>
+</li>
+<li class="tocentry"><a href="../hive/qrcode.htm">QRCode</a>
+</li>
+<li class="tocentry"><a href="../hive/hash.htm">Hash</a>
+</li>
+<li class="tocentry"><a href="../hive/result-visualization.htm">Result Visualization</a>
+</li>
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../hive/index.htm">Hive</a></li> / <li><a href="../hiveTypes.htm">Types</a></li> / <li><a href="../hive/text.htm">Text</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="text">Text<a class="headerlink" href="#text" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>In this section you will find information about the <code>Text</code> type.<br />
+All the operations and functions shown here work with literal texts, components and variables alike. For example, you can use the <code>toUpper()</code> function on a component: <code>myText.toUpper()</code> or on a literal text: <code>&quot;awesome!&quot;.toUpper()</code>.</p>
+<h2 id="operations">Operations<a class="headerlink" href="#operations" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Example</th>
+	<th align="right">Result</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Add Text</td>
+	<td><code>&quot;awe&quot; + &quot;some&quot;</code></td>
+	<td align="right"><code>&quot;awesome&quot;</code></td>
+	<td>Combines two texts</td>
+</tr>
+<tr>
+	<td>Add Number</td>
+	<td><code>&quot;high &quot; + 5</code></td>
+	<td align="right"><code>&quot;high 5&quot;</code></td>
+	<td>Combines a text and a number</td>
+</tr>
+<tr>
+	<td>Repeat</td>
+	<td><code>&quot;$&quot; * 3</code></td>
+	<td align="right"><code>&quot;$$$&quot;</code></td>
+	<td>Repeats a text a number of times</td>
+</tr>
+</tbody>
+</table>
+<h2 id="comparing-text">Comparing Text<a class="headerlink" href="#comparing-text" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Example</th>
+	<th align="right">Result</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Equal to</td>
+	<td><code>&quot;up&quot;  = &quot;UP&quot;</code></td>
+	<td align="right"><code>false</code></td>
+	<td>Returns <code>true</code> if two texts are <strong>equal</strong>, case sensitive</td>
+</tr>
+<tr>
+	<td>Equal to</td>
+	<td><code>&quot;up&quot; ~= &quot;UP&quot;</code></td>
+	<td align="right"><code>true</code></td>
+	<td>Returns <code>true</code> if two texts are <strong>equal</strong>, case insensitive</td>
+</tr>
+<tr>
+	<td>Not Equal to</td>
+	<td><code>&quot;up&quot; &lt;&gt; &quot;UP&quot;</code></td>
+	<td align="right"><code>true</code></td>
+	<td>Returns <code>true</code> if two texts are <strong>not equal</strong>, case sensitive</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong> that the <code>=</code> and <code>&lt;&gt;</code> operators are <strong>case sensitive</strong>, which means that lower case characters are <strong>not equal</strong> to their upper case counterparts.  </p>
+<p>The <code>~=</code> operator is case <strong>insensitive</strong>, which means it doesn't matter whether a character is lower or upper case.  </p>
+<p>There is no case insensitive version of the <code>&lt;&gt;</code> operator, but you can negate the outcome of the <code>~=</code> operator to achieve the same goal: <code>not(&quot;up&quot; ~= &quot;UP&quot;)</code> returns <code>false</code> for example.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p><strong>Whitespace</strong> characters such as spaces, tabs or line breaks are <strong>significant</strong> when comparing text!<br />
+The expression <code>&quot;a&quot; = &quot;a &quot;</code> is <code>false</code> because there is a space in the second text that is not present in the first.  </p>
+</div><h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><a href="#length">length</a></td>
+	<td>Gets the number of characters in a text</td>
+</tr>
+<tr>
+	<td><a href="#contains">contains(text)</a></td>
+	<td>Returns <code>true</code> if a text contains a specific text</td>
+</tr>
+<tr>
+	<td><a href="#toUpper">toUpper</a></td>
+	<td>Converts a text to upper case</td>
+</tr>
+<tr>
+	<td><a href="#toLower">toLower</a></td>
+	<td>Converts a text to lower case</td>
+</tr>
+<tr>
+	<td><a href="#take">take(amount)</a></td>
+	<td>Gets a subset of a text that contains a specified number of characters</td>
+</tr>
+<tr>
+	<td><a href="#skip">skip(amount)</a></td>
+	<td>Gets a text with a specified number of characters omitted</td>
+</tr>
+<tr>
+	<td><a href="#replace">replace(old,new)</a></td>
+	<td>Replaces all occurrences of a text with a different text</td>
+</tr>
+<tr>
+	<td><a href="#encodeHtml">encodeHtml</a></td>
+	<td>Gets an HTML-encoded copy of a text</td>
+</tr>
+<tr>
+	<td><a href="#decodeHtml">decodeHtml</a></td>
+	<td>Decodes an HTML-encoded text</td>
+</tr>
+<tr>
+	<td><a href="#encodeUrl">encodeUrl</a></td>
+	<td>Gets an URL-encoded copy of a text</td>
+</tr>
+<tr>
+	<td><a href="#decodeUrl">decodeUrl</a></td>
+	<td>Decodes an URL-encoded text</td>
+</tr>
+<tr>
+	<td><a href="#toNumber">toNumber</a></td>
+	<td>Converts a text to a <a href="number.htm"><code>Number</code></a></td>
+</tr>
+<tr>
+	<td><a href="#toColor">toColor</a></td>
+	<td>Converts a text to a <code>Color</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="length">length<a class="headerlink" href="#length" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns the number of characters in a text.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th align="right">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>&quot;123&quot;.length()</code></td>
+	<td align="right"><code>3</code></td>
+</tr>
+<tr>
+	<td><code>&quot;awesome&quot;.length()</code></td>
+	<td align="right"><code>7</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="contains">contains(text)<a class="headerlink" href="#contains" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns <code>true</code> if a text contains a specific text.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th align="right">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>&quot;awesome&quot;.contains(&quot;some&quot;)</code></td>
+	<td align="right"><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="toUpper">toUpper<a class="headerlink" href="#toUpper" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns a copy of the text with all characters converted to upper case.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>&quot;Awesome!&quot;.toUpper()</code></td>
+	<td><code>&quot;AWESOME!&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="toLower">toLower<a class="headerlink" href="#toLower" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns a copy of the text with all characters converted to lower case.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>&quot;Awesome!&quot;.toLower()</code></td>
+	<td><code>&quot;awesome!&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="take">take(amount)<a class="headerlink" href="#take" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns a subset of a text that contains a specified number of characters.</p>
+<ul>
+<li>If a negative number is used, characters will be taken from the end of the text towards the beginning.</li>
+<li>If the number is greater than the number of characters in the text, the same text will be returned.</li>
+<li>If the number is zero, an empty text will be returned.</li>
+</ul>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>&quot;awesome&quot;.take(3)</code></td>
+	<td><code>&quot;awe&quot;</code></td>
+</tr>
+<tr>
+	<td><code>&quot;awesome&quot;.take(-4)</code></td>
+	<td><code>&quot;some&quot;</code></td>
+</tr>
+<tr>
+	<td><code>&quot;awesome&quot;.take(100)</code></td>
+	<td><code>&quot;awesome&quot;</code></td>
+</tr>
+<tr>
+	<td><code>&quot;awesome&quot;.take(0)</code></td>
+	<td><code>&quot;&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="skip">skip(amount)<a class="headerlink" href="#skip" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns a text with a specified number of characters omitted.  </p>
+<ul>
+<li>If a negative number is used, characters will be skipped from the end of the text towards the beginning.</li>
+<li>If the number is greater than the number of characters in the text, an empty text will be returned.</li>
+<li>If the number is zero, the same text will be returned.</li>
+</ul>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>&quot;awesome&quot;.skip(3)</code></td>
+	<td><code>&quot;some&quot;</code></td>
+</tr>
+<tr>
+	<td><code>&quot;awesome&quot;.skip(-4)</code></td>
+	<td><code>&quot;awe&quot;</code></td>
+</tr>
+<tr>
+	<td><code>&quot;awesome&quot;.skip(100)</code></td>
+	<td><code>&quot;&quot;</code></td>
+</tr>
+<tr>
+	<td><code>&quot;awesome&quot;.skip(0)</code></td>
+	<td><code>&quot;awesome&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>This function is the exact opposite of <a href="#take"><code>Take</code></a>.<br />
+You can use either one and accomplish the same goal, but often it is easier to reason about a problem when combining the two.</p>
+<p><strong>Example:</strong> Imagine you wanted to extract <code>123</code> from an inventory number like <code>ST-123-XYZ</code>.<br />
+The most straight-forward way to accomplish this probably is <code>inventoryNumber.skip(3).take(3)</code>.<br />
+But you could just as well write <code>inventoryNumber.take(6).take(-3)</code>. The choice is yours!</p>
+</div><h2 id="replace">replace(old,new)<a class="headerlink" href="#replace" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Replaces all occurrences of a text with a different text.</p>
+<ul>
+<li>If the searched text isn't found, the function will return the original text</li>
+<li>All occurrences of the searched text will be replaced, not just the first one.</li>
+</ul>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th>Example</th>
+	<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>&quot;awesome&quot;.replace(&quot;esome&quot;, &quot;ful&quot;)</code></td>
+	<td><code>&quot;awful&quot;</code></td>
+</tr>
+<tr>
+	<td><code>&quot;a;divided;text;&quot;.replace(&quot;;&quot;, &quot; &quot;)</code></td>
+	<td><code>&quot;a divided text &quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="encodeHtml">encodeHtml<a class="headerlink" href="#encodeHtml" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Returns a Text with all characters replaced that have special meaning in HTML, so that it can be safely used.</p>
+<pre><code class="hive">&quot;I &lt;3 Hive &amp; HTML&quot;.EncodeHtml()
+// returns: I &amp;lt;3 Hive &amp;amp; HTML
+</code></pre>
+
+<p><strong>Note:</strong> while the Text may look strange, your browser will still display it correctly.</p>
+<h2 id="decodeHtml">decodeHtml<a class="headerlink" href="#decodeHtml" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The opposite of <a href="#encodeHtml">EncodeHtml</a>: converts an HTML-encoded Text back to its original form. </p>
+<pre><code class="hive">&quot;I &amp;lt;3 Hive &amp;amp; HTML&quot;.DecodeHtml()
+// returns: I &lt;3 Hive &amp; HTML
+</code></pre>
+
+<h2 id="encodeUrl">encodeUrl<a class="headerlink" href="#encodeUrl" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Similar to <a href="#encodeHtml">EncodeHtml</a>, returns a Text with all characters replaced that have special meaning in URLs, so that it can be safely used.</p>
+<pre><code class="hive">&quot;I &lt;3 Hive &amp; HTML&quot;.EncodeUrl()
+// returns: I+%3C3+Hive+%26+HTML
+</code></pre>
+
+<h2 id="decodeUrl">decodeUrl<a class="headerlink" href="#decodeUrl" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The opposite of <a href="#encodeUrl">EncodeUrl</a>: converts an URL-encoded Text back to its original form. </p>
+<pre><code class="hive">&quot;I+%3C3+Hive+%26+HTML&quot;.DecodeUrl()
+// returns: I &lt;3 Hive &amp; HTML
+</code></pre>
+
+<h2 id="toNumber">toNumber<a class="headerlink" href="#toNumber" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Converts a text to a <a href="number.htm"><code>Number</code></a>.<br />
+If the text cannot be converted, for example because it contains non-numerical characters, <code>Empty</code> will be returned.</p>
+<table class="table table-bordered-all table-responsive">
+<thead>
+<tr>
+	<th align="right">Example</th>
+	<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="right"><code>&quot;13.37&quot;.toNumber()</code></td>
+	<td><code>13.37</code></td>
+</tr>
+<tr>
+	<td align="right"><code>&quot;13$&quot;.toNumber()</code></td>
+	<td><code>Empty</code></td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p><strong>Always</strong> provide a fallback value in case the conversion fails.<br />
+We made it easy to do so with the <code>or</code> operator: </p>
+<pre><code class="hive">&quot;13$&quot;.toNumber() or 1
+</code></pre>
+
+<p>In this example, the result will be <code>1</code>. </p>
+</div><h2 id="toColor">toColor<a class="headerlink" href="#toColor" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Converts a text in <a href="https://www.w3schools.com/colors/colors_hexadecimal.asp" target="_blank">hexadecimal color format</a> to a Color:</p>
+<pre><code class="hive">&quot;#0000ff&quot;.ToColor()  // 6-digit format: #RRGGBB
+&quot;#f00&quot;.ToColor()     // 3-digit format: #RGB
+</code></pre>
+
+<p>If the color format is invalid, an error will be returned:</p>
+<pre><code class="hive">&quot;#ff00&quot;.ToColor()    // ! ERROR ! invalid format (4 digits)
+</code></pre>
+
+<h2 id="isBase64">isBase64<a class="headerlink" href="#isBase64" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>Checks if the given text is a valid <a href="https://en.wikipedia.org/wiki/Base64" target="_blank">base64</a> string.</p>
+<pre><code class="hive">&quot;&quot;.isBase64()  // true, empty text is a valid base64 string
+&quot;=&quot;.isBase64()  // false
+&quot;a=&quot;.isBase64()  // false
+&quot;Zm9vYmE=&quot;.isBase64()  // true
+</code></pre>
+
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

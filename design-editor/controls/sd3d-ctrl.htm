@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShapeDiver3d control - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../../favicon-16x161.png">
+    <link rel="stylesheet" href="../../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../Configurator.htm">Configurator</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../../DesignEditor.htm">Design Editor</a></span></li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../../Controls.htm">Controls</a></span></li>
+<li class="tocentry"><a href="../../design-editor/controls/cfgr-ctrl.htm">Configurator control</a>
+</li>
+<li class="tocentry current"><a class="current" href="../../design-editor/controls/sd3d-ctrl.htm">ShapeDiver3d control</a>
+<ul class="currentrelative">
+<li class="tocentry"><a href="#controlling-the-camera">Controlling the camera</a></li>
+
+<li class="tocentry"><a href="#center-camera">Centering camera</a></li>
+
+
+
+</ul>
+<li class="tocentry"><a href="../../design-editor/controls/control-dom-css.htm">DOM & CSS classes</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../../CustomCSS.htm">Custom CSS</a></span>
+</li>
+<li class="tocentry"><a href="../../design-editor/mail-share.htm">Mail share</a>
+</li>
+<li class="tocentry"><a href="../../design-editor/social-share.htm">Social share</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry"><a href="../../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../../index.htm">Getting Started</a></li> / <li><a href="../../DesignEditor.htm">Design Editor</a></li> / <li><a href="../../Controls.htm">Controls</a></li> / <li><a href="../../design-editor/controls/sd3d-ctrl.htm">ShapeDiver3d control</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="shapediver3d-control">ShapeDiver3d control<a class="headerlink" href="#shapediver3d-control" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<h2 id="controlling-the-camera">Controlling the camera<a class="headerlink" href="#controlling-the-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>You can position the camera using the controls <code>Set camera position</code> slot. This slot expects 2 parameters:</p>
+<ul>
+<li><code>Pos</code>: The target position</li>
+<li><code>TransitionMS</code>: Duration for the camera movement from the current position to the given target position in [ms]. 0 for no transition.</li>
+</ul>
+<p>The <code>Pos</code> parameter expects a string in the following format:</p>
+<pre><code class="js">{
+    &quot;position&quot;: {
+        &quot;x&quot;: 0,
+        &quot;y&quot;: 0,
+        &quot;z&quot;: 0
+    },
+    &quot;target&quot;: {
+        &quot;x&quot;: 0,
+        &quot;y&quot;: 0,
+        &quot;z&quot;: 0
+    }
+}
+</code></pre>
+
+<p>You can get the current position of the camera within a configurator using the debug panel of the configurator's preview:</p>
+<p><img src="./../../img/CfgrPreviewDebuggerGet3dCameraPos.png" width="313" height="492" /></p>
+<h2 id="center-camera">Centering camera<a class="headerlink" href="#center-camera" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<p>The camera can be centered using the following components &amp; rules. The component names are only exemplary and can be chosen to your likings. It is recommended to place them all into a common group like <code>Center 3d camera</code>.</p>
+<pre><code class="js">// Component &quot;ModelHalfWidth&quot;
+{ModelWidth} / 2 // TODO: Insert appropriate values for the placeholder {ModelWidth}
+
+// Component &quot;ModelHalfHeight&quot;
+{ModelHeight} / 2 // TODO: Insert appropriate values for the placeholder {ModelHeight}
+
+// Component &quot;CameraFieldOfView&quot;
+37 // degree
+
+// Component &quot;CameraDistanceWidth&quot;
+ModelHalfHeight / Math.tan(CameraFieldOfView / 2)
+
+// Component &quot;CameraDistanceHeight&quot;
+ModelHalfWidth / Math.tan(CameraFieldOfView / 2)
+
+// Component &quot;CameraDistance&quot;
+Math.max(CameraDistanceHeight, CameraDistanceWidth) * -1
+
+// Component &quot;CenterCameraPos&quot;
+&quot;&quot;&quot;{{
+    &quot;position&quot;: {{
+        &quot;x&quot;: {=ModelHalfWidth},
+        &quot;y&quot;: {=CameraDistance},
+        &quot;z&quot;: {=ModelHalfHeight}
+    },
+    &quot;target&quot;: {{
+        &quot;x&quot;: {=ModelHalfWidth},
+        &quot;y&quot;: 0,
+        &quot;z&quot;: {=ModelHalfHeight}
+    }
+}&quot;&quot;&quot;
+</code></pre>
+
+<p>Finally you only have to connect the component <code>CenterCameraPos</code> to the <code>Set camera position</code> slot of your <code>ShapeDiver3d</code> control.</p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../js/modernizr-2.8.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

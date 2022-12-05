@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - Combeenation Docs</title>
+    <link rel="shortcut icon" href="../favicon-16x161.png">
+    <link rel="stylesheet" href="../css/control-dom-css.css" type="text/css" />
+    <link rel="stylesheet" href="../css/release-notes.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../css/theme_colors.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles/monokai-sublime.css">
+    <link rel="stylesheet" href="../css/font-awesome.4.5.0.min.css">
+</head>
+<body role="document">
+    <div class="grid-for-nav">
+        <nav data-toggle="nav-shift" class="nav-side stickynav">
+            <div class="side-nav-search">
+                <a href="../index.htm"><i class="fa fa-home"></i> Combeenation Docs</a>
+                <div role="search">
+                    <form id="search-form" class="form" action="../Docnet_search.htm" method="get">
+                        <input type="text" name="q" placeholder="Search docs" />
+                    </form>
+                </div>
+            </div>
+            <div class="menu menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+<ul>
+<li class="tocentry"><a href="../index.htm">Getting Started</a>
+</li>
+
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../releases.htm">Release Notes</a></span>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../hive/index.htm">Hive</a></span>
+</li>
+<li class="tocentry">
+<ul>
+<li><span class="navigationgroup"><i class="fa fa-caret-down"></i> <a href="../Configurator.htm">Configurator</a></span></li>
+<li class="tocentry"><a href="../configurator/general.htm">General</a>
+</li>
+<li class="tocentry"><a href="../configurator/configuration.htm">Configuration</a>
+</li>
+<li class="tocentry"><a href="../configurator/embedding.htm">Embedding</a>
+</li>
+<li class="tocentry current"><a class="current" href="../configurator/checkout.htm">Checkout</a>
+</li>
+<li class="tocentry"><a href="../configurator/checkout-types.htm">Checkout types</a>
+</li>
+<li class="tocentry"><a href="../configurator/user-input-sanitization.htm">User input sanitization</a>
+</li>
+<li class="tocentry"><a href="../configurator/supported-browsers.htm">Supported browsers</a>
+</li>
+
+</ul>
+</li>
+<li class="tocentry">
+<span class="navigationgroup"><i class="fa fa-caret-right"></i> <a href="../DesignEditor.htm">Design Editor</a></span>
+</li>
+<li class="tocentry"><a href="../api/index.htm">API</a>
+</li>
+<li class="tocentry"><a href="../cjs-utils/index.htm">Custom JS Utils</a>
+</li>
+<li class="tocentry"><a href="../3dviewer/index.htm">3D Viewer</a>
+</li>
+<li class="tocentry"><a href="../keyboardShortcuts.htm">Keyboard Shortcuts</a>
+</li>
+<li class="tocentry"><a href="../userPermissions.htm">User Permissions</a>
+</li>
+</ul>
+				<div class="toc-footer">
+					<span class="text-small">
+						<hr/>
+						<a href="https://github.com/FransBouma/DocNet" target="_blank">Made with <i class="fa fa-github"></i> DocNet</a>
+					</span>
+				</div>	
+			</div>
+            &nbsp;
+        </nav>
+        <section data-toggle="nav-shift" class="nav-content-wrap">
+            <nav class="nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="nav-top" class="fa fa-bars"></i>
+                <a href="../index.htm">Combeenation Docs</a>
+            </nav>
+            <div class="nav-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+                    <div class="breadcrumbs">
+<ul><li><a href="../index.htm">Getting Started</a></li> / <li><a href="../Configurator.htm">Configurator</a></li> / <li><a href="../configurator/checkout.htm">Checkout</a></li></ul>
+					
+                    </div>
+                    <hr />
+                </div>
+                <div role="main">
+                    <div class="section">
+<h1 id="checkout">Checkout<a class="headerlink" href="#checkout" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>Combeenation supports multiple <a href="./checkout-types.htm">checkout types</a> out of the box.</p>
+<p>During the checkout you can put the users configuration into one of the popular shopping carts like <a href="./checkout-types.htm#magento">Magento</a> or <a href="./checkout-types.htm#woocommerce">WooCommerce</a>. Alternatively you can send an <a href="./checkout-types.htm#mail">E-Mail</a> to one or more recipients with content of your choice.</p>
+<p>If those checkout types don't fit your needs, there are also some more advanced checkout types like <a href="./checkout-types.htm#rest">REST</a>, <a href="./checkout-types.htm#ftp">FTP</a> or <a href="./checkout-types.htm#diy-checkout">Do it yourself</a> checkout.</p>
+<h1 id="basic-checkout-configuration">Basic checkout configuration<a class="headerlink" href="#basic-checkout-configuration" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>You can create a shop for the checkout type of your liking by clicking on the <code>Plus</code> icon in the upper right corner of the <code>CheckoutComponent</code> editor.</p>
+<p>Whilst you can create multiple checkout shops, there's always exactly 1 active shop at a time.</p>
+<p>The active shop is determined by the resulting value of the <a href="./../hive/index.htm">Hive</a> script in the <code>CheckoutComponent's</code>  <code>Shop</code> property.
+Since this <a href="./../hive/index.htm">Hive</a> script can also take its <code>input</code> into consideration, there are many different ways to define which shop should be activated. E.g. by selected preset, by given URI paramter, by the wizard page on which the checkout was initiated, ...</p>
+<h1 id="detailed-checkout-configuration">Detailed checkout configuration<a class="headerlink" href="#detailed-checkout-configuration" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>You can set the checkout details like Magento endpoints or recipient mail addresses etc. by selecting the shop in the <code>Shops</code> list and setting according values for the properties shown in the list below.</p>
+<h1 id="how-to-trigger-the-checkout">How to trigger the checkout<a class="headerlink" href="#how-to-trigger-the-checkout" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>The checkout can be triggered using signals &amp; slots in the design editor.</p>
+<p>Usually you'll bind the <code>CheckoutComponent's</code> <code>Do checkout</code> slot to the <code>clicked</code> signal of a <code>button</code>.</p>
+<p>Using the <code>Do checkout</code> slot's first parameter <code>Selected shop</code>, you can control which shop will be used if multiple shops exist.</p>
+<p>The given value of the <code>Selected shop</code> parameter is set as <code>input</code> of the <code>CheckoutComponent's</code> <code>Shop</code> property. If you leave it empty the <code>input</code> is left untouched and remains the same as set in the <code>CheckoutComponent</code> editor. If not empty, <code>Selected shop</code> is usually the name of the shop you'd like to execute.</p>
+<div class="alert alert-warning"><span class="alert-title"><i class="fa fa-warning"></i> Warning!</span><p>The <a href="./../hive/index.htm">Hive</a> rule of the <code>CheckoutComponent's</code> <code>Shop</code> property must actively use its <code>input</code> for the <code>Selected shop</code> paramter to actually take effect.</p>
+</div><div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>When creating a new configurator, a default <code>SigSlo</code> already exists which performs the checkout when the user clicks the &quot;Order now&quot; button.</p>
+</div><h1 id="customizing-the-checkout-load-mask">Customizing the checkout load mask<a class="headerlink" href="#customizing-the-checkout-load-mask" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>By default, the configurator shows a load mask with the text <code>Adding configuration to cart...</code> when the checkout is started. This load mask is never hidden by default and will stay there until the user leaves the site or closes the tab or browser.</p>
+<p>Most checkouts redirect to the shopping cart after the checkout succeeded. This redirect also hides the load mask.</p>
+<p>You can customize the message shown in the load mask using some signals &amp; slots which are provided by the <a href="./../design-editor/controls/cfgr-ctrl.htm#loadmask-sigslos">configurator control</a> and the <code>CheckoutComponent</code>.
+When creating a new configurator, the following <code>SigSlo</code> is responsible for showing the default checkout load mask:
+<code>Checkout.CheckoutStarted -&gt; Configurator.ShowLoadMask('Adding configuration to cart...')</code></p>
+<p>This <code>SigSlo</code> already exists by default in every newly created configurator:</p>
+<p><img src="../img/AdjustCheckoutLoadMaskText.png" width="624" height="807" /></p>
+<div class="alert alert-info"><span class="alert-title"><i class="fa fa-info-circle"></i> Info</span><p>An easy way to customize the shown message is by simply changing the value of the <code>Message</code> parameter for the existing <code>SigSlo</code> as shown above.</p>
+</div><p>If you'd like to show a more advanced UI during checkout, you can also delete this <code>SigSlo</code>, create your own UI and manage showing and hiding of it using the <code>CheckoutComponent's</code> <code>Checkout started</code> &amp; <code>Checkout succeeded</code> signals.</p>
+<h1 id="confirmation-after-checkout">Confirmation after checkout<a class="headerlink" href="#confirmation-after-checkout" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>If the configurator is embedded into a shop system with a checkout cart, the configurator page is usually redirected to the cart after the checkout. This redirect is either triggered by the parent page or some custom Javascript in the configurator's parent page plugin.</p>
+<p>For this scenario you don't have to implement any special handling. The configurator's default <code>SigSlo</code>s show the <code>Adding configuration to cart...</code> load mask which is not hidden until the redirect to the cart happens.</p>
+<p>If no redirect to a shopping cart happens (e.g. when performing a mail checkout), you'll most probably want to hide the load mask and show some sort of confirmation after the checkout succeeded (e.g. after the mail has been sent). You can do this by using the <code>CheckoutComponent's</code> <code>Checkout succeeded</code> signal and the configurator control's <a href="./../design-editor/controls/cfgr-ctrl.htm#loadmask-sigslos">hide load mask slot</a>. You can also show your own UI with some confirmation using the <code>CheckoutComponent's</code> <code>Checkout succeeded</code> signal.</p>
+<h1 id="continue-after-checkout">Continuing configuration after checkout<a class="headerlink" href="#continue-after-checkout" title="Permalink to this headline"><i class="fa fa-link" aria-hidden="true"></i></a></h1>
+<p>If needed, you can keep the configurator open for further configuration after the checkout. A new configuration will be started automatically to protect the checked out one from any modifications. This change is completely transparent and should not be noticed by the user. When this new configuration is checked out, it replaces the previous one.</p>
+<p>You only have to manually <a href="./../design-editor/controls/cfgr-ctrl.htm#loadmask-sigslos">hide the load mask</a> using the <code>CheckoutComponent's</code> <code>Checkout succeeded</code> signal.</p>
+
+                    </div>
+                </div>
+                <footer>
+                    <hr />
+                    <div role="contentinfo">
+Start building a <a href='http://www.combeenation.com/' target='_blank'>Combeenation</a> configurator at <a href='https://portal.combeenation.com' target='_blank'>portal.combeenation.com</a>!
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
